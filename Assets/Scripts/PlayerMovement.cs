@@ -6,11 +6,14 @@ public class PlayerMovement : MonoBehaviour
     public float move_speed = 5.0f;
     public float drag_speed = 5.0f;
     public float jump_force = 300.0f;
+    public float air_control = 0.25f;
 
     public LayerMask collision_mask;
 
     private BoxCollider2D box_collider;
     private Rigidbody2D rigid_body;
+
+    private bool can_jump = true;
 	
     void Start () 
     {
@@ -20,15 +23,18 @@ public class PlayerMovement : MonoBehaviour
     
 	void Update()
     {
-        move();
         jump();
+        move();
 	}
 
     void move()
     {
         Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-        rigid_body.AddForce(new Vector2(input.x * move_speed * Time.deltaTime, 0), ForceMode2D.Impulse);
+        if (can_jump)
+            rigid_body.AddForce(new Vector2(input.x * move_speed * Time.deltaTime, 0), ForceMode2D.Impulse);
+        else
+            rigid_body.AddForce(new Vector2(input.x * (move_speed * air_control) * Time.deltaTime, 0), ForceMode2D.Impulse);
 
         if (input.x == 0)
 		{
@@ -42,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 ray_origin = new Vector2((bounds.min.x + bounds.max.x) / 2, bounds.min.y);
 
         RaycastHit2D hit = Physics2D.Raycast(ray_origin, Vector2.up, -int.MaxValue, collision_mask);
-        bool can_jump = hit.distance < 0.1f;
+        can_jump = hit.distance < 0.1f;
 
         Debug.DrawRay(ray_origin, Vector2.up * -int.MaxValue, Color.red);
 
