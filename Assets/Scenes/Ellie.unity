@@ -96,7 +96,7 @@ GameObject:
   - 33: {fileID: 453470351}
   - 23: {fileID: 453470350}
   - 61: {fileID: 453470349}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f073ae3c5f452d84b90dec7ebfce68e2, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -357,7 +357,7 @@ GameObject:
   - 33: {fileID: 1638346651}
   - 23: {fileID: 1638346650}
   - 61: {fileID: 1638346649}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,6 @@ GameObject:
   - 212: {fileID: 1853652277}
   - 61: {fileID: 1853652276}
   - 114: {fileID: 1853652275}
-  - 61: {fileID: 1853652279}
   - 50: {fileID: 1853652280}
   m_Layer: 0
   m_Name: Player
@@ -451,15 +450,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1853652274}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fe655b1af07588468e0ddfcc17e414f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3dbfaa507d416534ba8cd024658d2020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  axisName: Horizontal
-  yAxis: Vertical
-  anim: {fileID: 0}
-  OnGround: 0
-  onLadder: 0
+  climb_speed: 5
+  move_speed: 50
+  drag_speed: 20
+  jump_force: 1000
+  air_control: 0.25
+  collision_mask:
+    serializedVersion: 2
+    m_Bits: 512
+  on_ladder: 0
 --- !u!61 &1853652276
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -516,20 +518,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
---- !u!61 &1853652279
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1853652274}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 12, y: 16}
 --- !u!50 &1853652280
 Rigidbody2D:
   serializedVersion: 2
@@ -546,4 +534,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4

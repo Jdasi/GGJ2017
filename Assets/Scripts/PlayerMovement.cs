@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public float climb_speed = 0;
     public float move_speed = 5.0f;
     public float drag_speed = 5.0f;
     public float jump_force = 300.0f;
@@ -10,16 +11,20 @@ public class PlayerMovement : MonoBehaviour
 
     public LayerMask collision_mask;
 
+    public bool on_ladder = false;
+
     private BoxCollider2D box_collider;
     private Rigidbody2D rigid_body;
 
     private bool can_jump = true;
-	
+    private float climb_velocity = 0;
+    private float gravity_store = 0;
     void Start () 
     {
         box_collider = GetComponent<BoxCollider2D>();
 	    rigid_body = GetComponent<Rigidbody2D>();
-	}
+        gravity_store = rigid_body.gravityScale;
+    }
     
 	void Update()
     {
@@ -39,6 +44,19 @@ public class PlayerMovement : MonoBehaviour
         if (input.x == 0)
 		{
             rigid_body.velocity = new Vector2(Mathf.Lerp(rigid_body.velocity.x, 0, drag_speed * Time.deltaTime), rigid_body.velocity.y);
+        }
+
+
+        //Ladder movement
+        if(on_ladder)
+        {
+            rigid_body.gravityScale = 0;
+            climb_velocity = climb_speed * Input.GetAxisRaw("Vertical");
+            rigid_body.velocity = new Vector2(rigid_body.velocity.x, climb_velocity);
+        }
+        if (!on_ladder)
+        {
+            rigid_body.gravityScale = gravity_store;
         }
     }
 
