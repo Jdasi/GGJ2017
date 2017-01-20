@@ -3,9 +3,13 @@ using System.Collections;
 
 public class Ladder : MonoBehaviour {
     public int speed = 10;
+    public float climbVelocity;
+    public float climbSpeed;
+    private float gravityStore;
+    private PlayerMovement player;
 	// Use this for initialization
 	void Start () {
-	
+        player = FindObjectOfType<PlayerMovement>();
 	}
 	
 	// Update is called once per frame
@@ -13,26 +17,19 @@ public class Ladder : MonoBehaviour {
 	
 	}
 
-    void OnTriggerStay2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
-
-       // Physics2D.gravity = new Vector2(0,0);
-        if(col.tag == "Player" && Input.GetKey(KeyCode.W))
+        if (col.tag == "Player")
         {
-            col.GetComponent<Rigidbody2D>().velocity = new Vector2(0, speed);
-        }
-        else if (col.tag == "Player" && Input.GetKey(KeyCode.S))
-        {
-            col.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -speed);
-        }
-        else
-        {
-            col.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 1);
+            player.on_ladder = true;
         }
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
-        col.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        if (col.tag == "Player")
+        {
+            player.on_ladder = false;
+        }
     }
 }
