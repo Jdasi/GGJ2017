@@ -1,46 +1,60 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovement : MonoBehaviour
+{
+    public float move_speed = 5.0f;
+    public float drag_speed = 5.0f;
+    public float jump_force = 300.0f;
+    public float air_control = 0.25f;
 
-    public float speed = 20.0f;
-    public string axisName = "Horizontal";
-    public Animator anim;
-    public bool OnGround;
+    public LayerMask collision_mask;
 
+    private BoxCollider2D box_collider;
+    private Rigidbody2D rigid_body;
+
+    private bool can_jump = true;
+	
     void Start () 
     {
-        anim = gameObject.GetComponent<Animator> ();
-    }
-
-    void Update()
-    {  
-
-    }
-
-    void OnCollisionStay2D(Collision2D coll)
+        box_collider = GetComponent<BoxCollider2D>();
+	    rigid_body = GetComponent<Rigidbody2D>();
+	}
+    
+	void Update()
     {
-        OnGround = true;
-        if (OnGround == true)
-        {
-            if (Input.GetKeyDown (KeyCode.Space)) 
-            {
-                GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0, 5), ForceMode2D.Impulse);
-            }
+        jump();
+        move();
+	}
+
+    void move()
+    {
+        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+
+        if (can_jump)
+            rigid_body.AddForce(new Vector2(input.x * move_speed * Time.deltaTime, 0), ForceMode2D.Impulse);
+        else
+            rigid_body.AddForce(new Vector2(input.x * (move_speed * air_control) * Time.deltaTime, 0), ForceMode2D.Impulse);
+
+        if (input.x == 0)
+		{
+            rigid_body.velocity = new Vector2(Mathf.Lerp(rigid_body.velocity.x, 0, drag_speed * Time.deltaTime), rigid_body.velocity.y);
         }
     }
 
-    void OnCollisionExit2D(Collision2D coll)
+    void jump()
     {
-        if (OnGround) 
-        {
-            OnGround = false;
-        }
-    }
+        Bounds bounds = box_collider.bounds;
+        Vector2 ray_origin = new Vector2((bounds.min.x + bounds.max.x) / 2, bounds.min.y);
 
-    // Update is called once per frame
-    void FixedUpdate () 
-    {
-        transform.position += transform.right * Input.GetAxis(axisName) * speed * Time.deltaTime;
+        RaycastHit2D hit = Physics2D.Raycast(ray_origin, Vector2.up, -int.MaxValue, collision_mask);
+        can_jump = hit.distance < 0.1f;
+
+        Debug.DrawRay(ray_origin, Vector2.up * -int.MaxValue, Color.red);
+
+        if (Input.GetButtonDown("Jump") && can_jump)
+        {
+            rigid_body.AddForce(new Vector2(0, jump_force));
+        }
     }
 }
