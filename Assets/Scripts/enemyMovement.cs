@@ -9,22 +9,23 @@ public class enemyMovement : MonoBehaviour {
     private float speed;
     private int moveChance;
     private bool checkMove;
+    private bool isFrozen;
 
-
+    public Sprite normalSprite;
+    public Sprite frozenSprite;
 
 	void Start ()
     {
         moveLeft = true;
         checkMove = true;
-        speed = 1;
-        
-
+        isFrozen = false;
+        speed = 1;   
         InvokeRepeating("checkMoveChance", 1.0f, Random.Range(2.0f, 5.0f));
 
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate ()
+	void Update ()
     {
 	    if (moveLeft && checkMove)
         {
@@ -34,6 +35,13 @@ public class enemyMovement : MonoBehaviour {
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
         }
+
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            setFrozen();
+        }
+
 	}
 
     void OnCollisionEnter2D(Collision2D coll)
@@ -47,16 +55,36 @@ public class enemyMovement : MonoBehaviour {
 
     void checkMoveChance()
     {
-        moveChance = Random.Range(1, 100);
+        if(!isFrozen)
+        {
+            moveChance = Random.Range(1, 100);
+            if(moveChance >= 1 && moveChance <= 30)
+            {
+                checkMove = false;
+            }
+            else
+            {
+                checkMove = true; 
+            }
+        }
+    }
 
-        if(moveChance >= 1 && moveChance <= 30)
+
+    void setFrozen()
+    {
+        isFrozen = !isFrozen;
+
+        if(isFrozen)
         {
             checkMove = false;
+            GetComponent<SpriteRenderer>().sprite = frozenSprite;
         }
         else
         {
-            checkMove = true; 
+            checkMove = true;
+            GetComponent<SpriteRenderer>().sprite = normalSprite;
         }
+
     }
 
 }
