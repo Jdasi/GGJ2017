@@ -3,11 +3,13 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 
-    public float speed = 20.0f;
+    public float speed = 10.0f;
     public string axisName = "Horizontal";
+    public string yAxis = "Vertical";
+
     public Animator anim;
     public bool OnGround;
-
+    public bool onLadder = false;
     void Start () 
     {
         anim = gameObject.GetComponent<Animator> ();
@@ -20,6 +22,7 @@ public class PlayerMovement : MonoBehaviour {
 
     void OnCollisionStay2D(Collision2D coll)
     {
+       
         OnGround = true;
         if (OnGround == true)
         {
@@ -27,6 +30,19 @@ public class PlayerMovement : MonoBehaviour {
             {
                 GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0, 5), ForceMode2D.Impulse);
             }
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D col)
+    {
+        if(col.tag == "Ladder")
+        {
+            onLadder = true;
+        }    
+        else
+        {
+            onLadder = false;
+
         }
     }
 
@@ -42,5 +58,11 @@ public class PlayerMovement : MonoBehaviour {
     void FixedUpdate () 
     {
         transform.position += transform.right * Input.GetAxis(axisName) * speed * Time.deltaTime;
+
+        if(onLadder)
+        {
+            transform.position += transform.up * Input.GetAxis(yAxis);
+        }
     }
+
 }
