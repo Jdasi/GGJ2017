@@ -11,8 +11,8 @@ public class PlayerMovement : MonoBehaviour
 
     private BoxCollider2D box_collider;
     private Rigidbody2D rigid_body;
-
-	void Start()
+	
+    void Start () 
     {
         box_collider = GetComponent<BoxCollider2D>();
 	    rigid_body = GetComponent<Rigidbody2D>();
@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         rigid_body.AddForce(new Vector2(input.x * move_speed * Time.deltaTime, 0), ForceMode2D.Impulse);
 
         if (input.x == 0)
-        {
+		{
             rigid_body.velocity = new Vector2(Mathf.Lerp(rigid_body.velocity.x, 0, drag_speed * Time.deltaTime), rigid_body.velocity.y);
         }
     }
