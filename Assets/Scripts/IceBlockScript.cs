@@ -15,20 +15,20 @@ public class IceBlockScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         checkTemp();
     }
 
     void checkTemp()
     {
-        //if isCold
+        GameObject background = GameObject.Find("scrollingBackground");
+        if (background.GetComponent<BackgroundColour>().isCold)
         {
             isFrozen = true;
             changeOpacity();
             changeCollider();
         }
 
-        //else if isCold != true
+        else if (background.GetComponent<BackgroundColour>().isCold != true)
         {
             isFrozen = false;
             changeOpacity();
@@ -38,29 +38,17 @@ public class IceBlockScript : MonoBehaviour
 
     void changeOpacity()
     {
-        if (isFrozen)
+        if (isFrozen != true)
         {
             Color tmp = GetComponent<SpriteRenderer>().color;
-            tmp.a = 1f;
-            GetComponent<SpriteRenderer>().color = tmp;
-        }
-
-        else
-        {
-            Color tmp = GetComponent<SpriteRenderer>().color;
-            tmp.a = 0.2f;
+            tmp.a = 0.1f;
             GetComponent<SpriteRenderer>().color = tmp;
         }
     }
 
     void changeCollider()
     {
-        if (isFrozen)
-        {
-            GetComponent<BoxCollider2D>().isTrigger = true;
-        }
-
-        else
+        if (isFrozen != true)
         {
             GetComponent<BoxCollider2D>().isTrigger = false;
         }

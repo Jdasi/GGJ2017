@@ -65,16 +65,17 @@ public class BlockMoveScript : MonoBehaviour {
 
     void checkTemp()
     {
-        /*if (temp state == cold)
+        GameObject blah = GameObject.FindWithTag("Background");
+        if (blah.GetComponent<BackgroundColour>().isCold)
         {
             isFrozen = true;
-            set sprite to frozen;   
+            //set sprite to frozen;   
         }
 
-        else if (temp stat == hot)
+        else if (blah.GetComponent<BackgroundColour>().isCold != true)
         {
             isFrozen = false;
-            set sprite to normal;
-        }*/
+            //set sprite to normal;
+        }
     }
 }
