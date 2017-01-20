@@ -6,7 +6,7 @@ public class enemyMovement : MonoBehaviour {
     // Use this for initialization
 
     private bool moveLeft;
-    private float speed;
+    public float speed;
     private int moveChance;
     private bool checkMove;
     private bool isFrozen;
@@ -19,7 +19,7 @@ public class enemyMovement : MonoBehaviour {
         moveLeft = true;
         checkMove = true;
         isFrozen = false;
-        speed = 1;   
+        speed = 3;   
         InvokeRepeating("checkMoveChance", 1.0f, Random.Range(2.0f, 5.0f));
 
 	}
