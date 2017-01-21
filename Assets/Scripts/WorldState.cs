@@ -3,13 +3,12 @@ using System.Collections;
 
 public class WorldState : MonoBehaviour
 {
-
     public bool is_hot = false;
-    public HeatWaveObject[] tiles;
+    public HeatWaveObject[] heatwave_objects;
+    public float expand_duration = 1f;
 
-    public float expand_duration = 300f;
-    public float max_heatwave_radius = 200f;
-    public float heatwave_cooldown = 1f;
+    private float max_heatwave_radius = 100f;
+    private float heatwave_cooldown;
 
     private bool expanding = false;
     private CircleCollider2D circle_collider;
@@ -17,18 +16,17 @@ public class WorldState : MonoBehaviour
     private float timer = 0f;
     private float size_counter = 0f;
 
-	void Start()
+    void Start()
     {
-        tiles = GameObject.FindObjectsOfType<HeatWaveObject>();
+        heatwave_objects = GameObject.FindObjectsOfType<HeatWaveObject>();
         circle_collider = GetComponent<CircleCollider2D>();
 
-        foreach (HeatWaveObject obj in tiles)
-        {
-            obj.react();
-        }
-	}
-	
-	void Update()
+        heatwave_cooldown = expand_duration;
+
+        react_all();
+    }
+    
+    void Update()
     {
         if (expanding)
         {
@@ -42,7 +40,13 @@ public class WorldState : MonoBehaviour
         }
         else
         {
-            timer = 0f;
+            if (expanding)
+            {
+                expanding = false;
+                timer = 0f;
+                circle_collider.radius = 0f;
+                react_all();
+            }
         }
 
         if (Input.GetButtonDown("HeatWave") && timer == 0f)
@@ -54,6 +58,13 @@ public class WorldState : MonoBehaviour
             size_counter = 0f;
             circle_collider.radius = 0f;
         }
-	}
+    }
 
+    void react_all()
+    {
+        foreach (HeatWaveObject obj in heatwave_objects)
+        {
+            obj.react();
+        }
+    }
 }

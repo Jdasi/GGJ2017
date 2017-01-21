@@ -2,10 +2,6 @@
 using System.Collections;
 
 public class Ladder : MonoBehaviour {
-    public int speed = 10;
-    public float climbVelocity;
-    public float climbSpeed;
-    private float gravityStore;
     private PlayerMovement player;
 	// Use this for initialization
 	void Start () {
