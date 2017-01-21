@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HeatWave : MonoBehaviour
+public class WorldState : MonoBehaviour
 {
-    public bool active = false;
+    public bool is_hot = false;
 
     public Tile[] tiles;
 
@@ -20,8 +20,8 @@ public class HeatWave : MonoBehaviour
 	void Update()
     {
         if (Input.GetButtonDown("HeatWave"))
-        {   
-            active = !active;
+        {
+            is_hot = !is_hot;
 
             foreach (Tile tile in tiles)
             {
