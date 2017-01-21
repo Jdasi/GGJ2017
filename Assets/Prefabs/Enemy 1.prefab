@@ -14,6 +14,7 @@ GameObject:
   - 61: {fileID: 6122532}
   - 61: {fileID: 6139538}
   - 114: {fileID: 11416288}
+  - 114: {fileID: 11412530}
   m_Layer: 9
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -28,7 +29,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106862}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.143102, y: 0.36, z: 0}
+  m_LocalPosition: {x: 15.78782, y: 0.17694864, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -92,6 +93,17 @@ BoxCollider2D:
   m_Offset: {x: -0.00825882, y: 0.016517103}
   serializedVersion: 2
   m_Size: {x: 1.7940352, y: 1.5793104}
+--- !u!114 &11412530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9078512dcccc62409967b762d2d0bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11416288
 MonoBehaviour:
   m_ObjectHideFlags: 1
