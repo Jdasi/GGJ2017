@@ -76,17 +76,17 @@ public class MovingPlatformScript : MonoBehaviour {
     void checkTemp()
     {
         GameObject background = GameObject.Find("scrollingBackground");
-        if (background.GetComponent<BackgroundColour>().isCold)
-        {
-            isFrozen = true;
-            //set sprite to frozen;   
-        }
+        //if (background.GetComponent<BackgroundColour>().isCold)
+        //{
+        //    isFrozen = true;
+        //    //set sprite to frozen;   
+        //}
 
-        else if (background.GetComponent<BackgroundColour>().isCold != true)
-        {
-            isFrozen = false;
-            //set sprite to normal;
-        }
+        //else if (background.GetComponent<BackgroundColour>().isCold != true)
+        //{
+        //    isFrozen = false;
+        //    //set sprite to normal;
+        //}
     }
 
     void checkDistance()
