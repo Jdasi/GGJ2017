@@ -10,20 +10,13 @@ public class Icicle : MonoBehaviour {
     private int fallChance;
 
     void Start () {
-        InvokeRepeating("checkFallChance", 0.2f, Random.Range(0.5f, 1.0f));
-
+        InvokeRepeating("checkFallChance", 0.5f, Random.Range(1f, 2.0f));
     }
 
     // Update is called once per frame
     void FixedUpdate ()
     {
-        //checkFallChance();
-        if(triggered)
-        {
-            crushPosition.x = (icicles[i].transform.position.x);
-            crushPosition.y = (icicles[i].transform.position.y - 3);
-            icicles[i].transform.position = Vector2.Lerp(icicles[i].transform.position, crushPosition, 5);
-        }
+
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -36,7 +29,12 @@ public class Icicle : MonoBehaviour {
 
     void moveIcicle(int i)
     {
+        
+        crushPosition.x = (icicles[i].transform.position.x);
+        crushPosition.y = (icicles[i].transform.position.y - 3);
 
+        icicles[i].transform.position = Vector2.Lerp(icicles[i].transform.position, crushPosition, 5 * Time.deltaTime);
+       // Vector2.Lerp(icicles[i].transform.position, crushPosition, 5);
     }
 
     void checkFallChance()
@@ -49,7 +47,6 @@ public class Icicle : MonoBehaviour {
                 moveIcicle(i);
                 i++;
             }
-
         }
     }
 }

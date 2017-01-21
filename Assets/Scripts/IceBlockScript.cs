@@ -14,7 +14,6 @@ public class IceBlockScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (GetComponent<Renderer>().isVisible)
         {
             checkTemp();
@@ -56,7 +55,7 @@ public class IceBlockScript : MonoBehaviour
     {
         if (isFrozen != true)
         {
-            GetComponent<BoxCollider2D>().isTrigger = false;
+            GetComponent<BoxCollider2D>().isTrigger = true;
         }
     }
 }
