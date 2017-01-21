@@ -11,7 +11,6 @@ GameObject:
   - 212: {fileID: 21297274}
   - 61: {fileID: 6187418}
   - 114: {fileID: 11494154}
-  - 114: {fileID: 11425216}
   m_Layer: 0
   m_Name: Ladder
   m_TagString: Ladder
@@ -26,8 +25,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.45, y: 1.07, z: 0}
-  m_LocalScale: {x: 0.22964075, y: 0.39411318, z: 0.2482603}
+  m_LocalPosition: {x: 1.45, y: 0.41, z: 0}
+  m_LocalScale: {x: 0.22964075, y: 0.6108757, z: 0.2482603}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -45,17 +44,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 3.59, y: 9.65}
---- !u!114 &11425216
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f593fe7ce125e045887ef12085fc262, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11494154
 MonoBehaviour:
   m_ObjectHideFlags: 1
