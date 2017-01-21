@@ -16,11 +16,7 @@ public class Icicle : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate ()
     {
-      
-        if (triggered)
-        {
 
-        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -51,7 +47,6 @@ public class Icicle : MonoBehaviour {
                 moveIcicle(i);
                 i++;
             }
-
         }
     }
 }
