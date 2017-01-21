@@ -61,8 +61,6 @@ public class PlayerMovement : MonoBehaviour
             rigid_body.gravityScale = gravity_store;
         }
 
-
-
         if(on_ice)
         {
             drag_speed = 0;
