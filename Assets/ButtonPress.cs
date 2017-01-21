@@ -9,6 +9,7 @@ public class ButtonPress : MonoBehaviour {
 	
 	}
 	
+
 	// Update is called once per frame
 	void Update () {
 	    if (dropBridge)
@@ -25,9 +26,19 @@ public class ButtonPress : MonoBehaviour {
             }
         }
 	}
-    void OnTriggerEnter2D()
+
+
+    void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("")
+        if (col.gameObject.tag == "Player")
+        {
+            Debug.Log("Triggereeeeeeed");
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log("#triggered");
         dropBridge = true;
         transform.position += Vector3.down * 1 * Time.deltaTime;
     }

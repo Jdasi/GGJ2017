@@ -3,12 +3,14 @@ using System.Collections;
 
 public class SteamScript : MonoBehaviour {
 
-    bool cold = true;
+    //bool cold = true;
+    private WorldState world_state;
 
     // Use this for initialization
-    void Start () {
-	
-	}
+    void Start ()
+    {
+        world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -18,7 +20,7 @@ public class SteamScript : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D coll)
     {
-        if (cold == false)
+        if (world_state.is_hot)
         {
             if (coll.tag == "Player")
             {
@@ -33,16 +35,16 @@ public class SteamScript : MonoBehaviour {
         GameObject steam = GameObject.Find("Steam particle effect");
 
         GameObject background = GameObject.Find("Winter");
-        if (background.GetComponent<WinterBackground>().isCold)
+        if (!world_state.is_hot)
         {
-            cold = true;
+            //cold = true;
 
             steam.GetComponent<ParticleSystem>().enableEmission = false;
         }
 
         else
         {
-            cold = false;
+            //cold = false;
 
             steam.GetComponent<ParticleSystem>().enableEmission = true;
         }
