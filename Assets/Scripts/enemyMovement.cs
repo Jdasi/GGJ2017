@@ -46,7 +46,7 @@ public class enemyMovement : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if(coll.gameObject.tag == "Platform")
+        if(coll.gameObject.tag == "Obstacle")
         {
             moveLeft = !moveLeft;
         }
