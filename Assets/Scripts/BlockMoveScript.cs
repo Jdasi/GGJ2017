@@ -4,26 +4,27 @@ using System.Collections;
 public class BlockMoveScript : MonoBehaviour {
 
     bool moveDirection = true;
-    bool isFrozen = false;
-    public int speed = 0;
+    bool isFrozen = true;
+    public int speed = -2;
     public float maxHeight = 1.5f;
     public float minHeight = -1;
+    private WorldState world_state;
 
     // Use this for initialization
     void Start () {
-
-	}
+        world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 
-            checkTemp();
+       // checkTemp();
 
-            if (checkFrozen() != true)
-            {
-                checkDirection();
-                moveBlock();
-            }
+        if (isFrozen != true)
+        {
+            checkDirection();
+            moveBlock();
+        }            
     }
 
     void checkDirection()
@@ -67,17 +68,24 @@ public class BlockMoveScript : MonoBehaviour {
 
     void checkTemp()
     {
-        GameObject background = GameObject.Find("Winter");
-        if (background.GetComponent<WinterBackground>().isCold)
+        if (!world_state.is_hot)
         {
             isFrozen = true;
-            //set sprite to frozen;   
+            //change sprite
         }
 
-        else if (background.GetComponent<WinterBackground>().isCold != true)
+        else
         {
             isFrozen = false;
-            //set sprite to normal;
+            //change sprite
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "HeatWaveSource")
+        {
+            checkTemp();
         }
     }
 }
