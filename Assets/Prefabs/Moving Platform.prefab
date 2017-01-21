@@ -37,9 +37,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 181772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f593fe7ce125e045887ef12085fc262, type: 3}
+  m_Script: {fileID: 11500000, guid: 7732cf4eeb5a6d8439289df121832548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
+  maxDistanceRight: 0
+  maxDistanceLeft: 0
 --- !u!212 &21261378
 SpriteRenderer:
   m_ObjectHideFlags: 1
