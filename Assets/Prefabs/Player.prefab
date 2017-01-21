@@ -161,10 +161,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dbfaa507d416534ba8cd024658d2020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  climb_speed: 0
-  move_speed: 30
+  climb_speed: 5
+  move_speed: 25
   drag_speed: 20
-  jump_force: 500
+  jump_force: 300
   air_control: 0.33
   on_ladder: 0
 --- !u!114 &11471760

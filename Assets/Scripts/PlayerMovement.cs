@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
             rigid_body.gravityScale = 0;
             climb_velocity = climb_speed * Input.GetAxisRaw("Vertical");
             rigid_body.velocity = new Vector2(rigid_body.velocity.x, climb_velocity);
+            
         }
         if (!on_ladder)
         {
