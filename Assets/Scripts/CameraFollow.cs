@@ -15,7 +15,7 @@ public class CameraFollow : MonoBehaviour
         Vector3 temp = target.transform.position;
         temp.z = -10;
         temp.y = 1;
-        if(target.transform.position.y >= 3)
+        if(target.transform.position.y >= 0.8)
         {
             temp.y += target.transform.position.y;
         }

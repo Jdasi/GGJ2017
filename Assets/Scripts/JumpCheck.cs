@@ -5,15 +5,14 @@ public class JumpCheck : MonoBehaviour
 {
     public bool can_jump = true;
 
-	void Start()
+    void Start()
     {
-	
-	}
+    }
 	
 	void Update()
     {
-	
-	}
+
+    }
 
     void OnTriggerStay2D(Collider2D other)
     {
