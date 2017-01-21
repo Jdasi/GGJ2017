@@ -18,9 +18,8 @@ public class Icicle : MonoBehaviour {
         {
             for (int i = 0; i < icicles.Length; i++)
             {
-                ExecuteAfterTime(200);
+                StartCoroutine(ExecuteAfterTime(200));
                 icicles[i].transform.position += Vector3.down * 10 * Time.deltaTime;
-                Debug.Log(icicles[i].transform.position);
             }
         }
 

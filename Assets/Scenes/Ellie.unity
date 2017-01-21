@@ -485,7 +485,6 @@ GameObject:
   - 212: {fileID: 870391043}
   - 61: {fileID: 870391042}
   - 114: {fileID: 870391041}
-  - 114: {fileID: 870391040}
   - 114: {fileID: 870391045}
   m_Layer: 8
   m_Name: Ice Cube
@@ -494,18 +493,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &870391040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11428540, guid: e1363c58576cc50438763792a734571f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 870391039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &870391041
 MonoBehaviour:
   m_ObjectHideFlags: 0
