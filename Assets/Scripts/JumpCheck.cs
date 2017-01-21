@@ -17,7 +17,10 @@ public class JumpCheck : MonoBehaviour
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "Tile")
-            can_jump = true;
+        {
+            if (other.gameObject.GetComponent<SpriteRenderer>().enabled)
+                can_jump = true;
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
