@@ -18,7 +18,7 @@ public class WinterBackground : MonoBehaviour {
     void Update()
     {
        Color alpha = GetComponent<SpriteRenderer>().color;
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("q"))
         {
             if (alpha.a == 1 || alpha.a < 0)
             {
