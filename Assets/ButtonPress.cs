@@ -27,7 +27,7 @@ public class ButtonPress : MonoBehaviour {
 	}
     void OnTriggerEnter2D()
     {
-        Debug.Log("")
+        Debug.Log("");
         dropBridge = true;
         transform.position += Vector3.down * 1 * Time.deltaTime;
     }
