@@ -36,7 +36,6 @@ public class SteamScript : MonoBehaviour {
         if (background.GetComponent<WinterBackground>().isCold)
         {
             cold = true;
-            //  steam.GetComponent<ParticleSystem>().Stop();
 
             steam.GetComponent<ParticleSystem>().enableEmission = false;
         }
@@ -44,7 +43,6 @@ public class SteamScript : MonoBehaviour {
         else
         {
             cold = false;
-            // steam.GetComponent<ParticleSystem>().Play();
 
             steam.GetComponent<ParticleSystem>().enableEmission = true;
         }
