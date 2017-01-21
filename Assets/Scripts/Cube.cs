@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class Cube : MonoBehaviour {
-    
+
+    BoxCollider2D col; 
     // Use this for initialization
     void Start()
     {
@@ -15,11 +16,15 @@ public class Cube : MonoBehaviour {
     {
         
     }
+    void OnMouseEnter()
+    {
+        StartCoroutine(Activate()); 
+    }
 
-        void OnTriggerEnter()
-        {
-            StartCoroutine(Activate());
-        }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        StartCoroutine(Activate());
+    }
 
         IEnumerator Activate()
         {
@@ -28,7 +33,7 @@ public class Cube : MonoBehaviour {
             col.size = new Vector3(2, 2, 2);
             yield return new WaitForSeconds(1);
             col.size = new Vector3(1, 1, 1) / 2;
-            gameObject.GetComponent<Renderer>().material.color = Color.black;
+            gameObject.GetComponent<Renderer>().material.color = Color.white;
         }
 
    
