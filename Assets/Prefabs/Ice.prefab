@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 487876}
   - 212: {fileID: 21271948}
-  - 114: {fileID: 11457758}
   m_Layer: 0
   m_Name: Ice
   m_TagString: Untagged
@@ -29,17 +28,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11457758
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 152664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f593fe7ce125e045887ef12085fc262, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &21271948
 SpriteRenderer:
   m_ObjectHideFlags: 1

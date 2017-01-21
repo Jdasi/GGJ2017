@@ -16,15 +16,12 @@ public class MovingPlatformScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        if (GetComponent<OnScreenScript>().checkOnScreen())
-        {
             checkTemp();
 
             if (checkFrozen() != true)
             {
                 movePlatform();
             }
-        }
     }
 
     void OnCollisionEnter2D(Collision2D coll)
