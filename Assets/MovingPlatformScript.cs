@@ -6,6 +6,8 @@ public class MovingPlatformScript : MonoBehaviour {
     bool moveDirection = true;
     bool isFrozen = false;
     public int speed = 1;
+    public float maxDistanceRight = 0;
+    public float maxDistanceLeft = 0;
 
     // Use this for initialization
     void Start () {
@@ -21,10 +23,14 @@ public class MovingPlatformScript : MonoBehaviour {
         {
             movePlatform();
         }
-
     }
 
     void OnCollisionEnter2D(Collision2D coll)
+    {
+        changeDirection();
+    }
+
+    void changeDirection()
     {
         if (moveDirection)
         {
@@ -48,6 +54,8 @@ public class MovingPlatformScript : MonoBehaviour {
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
         }
+
+        checkDistance();
     }
 
     bool checkFrozen()
@@ -76,6 +84,19 @@ public class MovingPlatformScript : MonoBehaviour {
         {
             isFrozen = false;
             //set sprite to normal;
+        }
+    }
+
+    void checkDistance()
+    {
+        if (transform.position.x > maxDistanceRight)
+        {
+            changeDirection();
+        }
+
+        else if (transform.position.x > maxDistanceLeft)
+        {
+            changeDirection();
         }
     }
 }

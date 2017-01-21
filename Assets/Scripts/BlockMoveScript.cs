@@ -6,9 +6,11 @@ public class BlockMoveScript : MonoBehaviour {
     bool moveDirection = true;
     bool isFrozen = false;
     public int speed = 0;
+    public float maxHeight = 1.5f;
+    public float minHeight = -1;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
 	}
 	
@@ -26,12 +28,12 @@ public class BlockMoveScript : MonoBehaviour {
 
     void checkDirection()
     {
-        if (transform.position.y > 1.5)
+        if (transform.position.y > maxHeight)
         {
             moveDirection = true;
         }
 
-        else if (transform.position.y < -1)
+        else if (transform.position.y < minHeight)
         {
             moveDirection = false;
         }
