@@ -4,11 +4,12 @@ using System.Collections;
 public class IceBlockScript : MonoBehaviour
 {
     bool isFrozen = true;
+    private WorldState world_state;
 
     // Use this for initialization
     void Start()
     {
-
+        world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
     }
 
     // Update is called once per frame
@@ -22,22 +23,14 @@ public class IceBlockScript : MonoBehaviour
 
     void checkTemp()
     {
-        GameObject background = GameObject.Find("Winter");
-        if (background.GetComponent<WinterBackground>().isCold)
+        if (!world_state.is_hot)
         {
-           // Debug.Log("cold");
-
             isFrozen = true;
-            changeOpacity();
-            changeCollider();
         }
 
-        else if (background.GetComponent<WinterBackground>().isCold != true)
+        else 
         {
-            //Debug.Log("hot");
             isFrozen = false;
-            changeOpacity();
-            changeCollider();
         }
     }
 
@@ -56,6 +49,15 @@ public class IceBlockScript : MonoBehaviour
         if (isFrozen != true)
         {
             GetComponent<BoxCollider2D>().isTrigger = true;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "HeatWaveSource")
+        {
+            changeOpacity();
+            changeCollider();
         }
     }
 }

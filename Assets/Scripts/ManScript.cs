@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ManScript : MonoBehaviour {
+public class ManScript : MonoBehaviour
+{
 
     bool isFrozen = true;
     public Sprite alive;
@@ -12,7 +13,8 @@ public class ManScript : MonoBehaviour {
     private WorldState world_state;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
 
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY;
@@ -21,18 +23,14 @@ public class ManScript : MonoBehaviour {
         tmp.a = 0.5f;
         GetComponent<SpriteRenderer>().color = tmp;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
 
         if (GetComponent<Renderer>().isVisible)
         {
             checkTemp();
-
-            if (isFrozen == false)
-            {
-                enableGrav();
-            }
         }
 
         if (isFrozen == false)
@@ -60,7 +58,7 @@ public class ManScript : MonoBehaviour {
             isFrozen = true;
         }
 
-        else 
+        else
         {
             isFrozen = false;
         }
@@ -87,6 +85,14 @@ public class ManScript : MonoBehaviour {
             GetComponent<SpriteRenderer>().sprite = dead;
 
             isDead = true;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "HeatWaveSource")
+        {
+            enableGrav();
         }
     }
 }
