@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Tile : MonoBehaviour
+public class HeatWaveObject : MonoBehaviour
 {
     // TEMP STUFF WHILE WE WAIT FOR ART
-    public Color cold_color = Color.cyan;
-    public Color hot_color = Color.red;
+    public Sprite cold_sprite;
+    public Sprite hot_sprite;
 
     public bool visible_in_cold = true;
     public bool visible_in_hot = true;
@@ -24,7 +24,7 @@ public class Tile : MonoBehaviour
 
 	}
 
-    public void transition()
+    public void react()
     {
         if (!world_state.is_hot && visible_in_cold)
             gameObject.SetActive(true);
@@ -33,6 +33,6 @@ public class Tile : MonoBehaviour
         else
             gameObject.SetActive(false);
 
-        sprite.color = world_state.is_hot ? hot_color : cold_color;
+        sprite.sprite = world_state.is_hot ? hot_sprite : cold_sprite;
     }
 }
