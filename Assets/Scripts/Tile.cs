@@ -17,8 +17,6 @@ public class Tile : MonoBehaviour
     {
         heat_wave = GameObject.Find("HeatWaveManager").GetComponent<HeatWave>();
         sprite = GetComponent<SpriteRenderer>();
-
-        transition();
 	}
 	
 	void Update ()

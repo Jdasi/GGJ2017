@@ -5,11 +5,16 @@ public class HeatWave : MonoBehaviour
 {
     public bool active = false;
 
-    Tile[] tiles;
+    public Tile[] tiles;
 
 	void Start()
     {
         tiles = GameObject.FindObjectsOfType<Tile>();
+
+        foreach (Tile tile in tiles)
+        {
+            tile.transition();
+        }
 	}
 	
 	void Update()
