@@ -341,9 +341,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_hot: 0
   tiles: []
-  expand_duration: 10
-  max_heatwave_radius: 1000
-  heatwave_cooldown: 10
+  expand_duration: 5
+  max_heatwave_radius: 200
+  heatwave_cooldown: 5
 --- !u!114 &11481598
 MonoBehaviour:
   m_ObjectHideFlags: 1

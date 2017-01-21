@@ -26,13 +26,13 @@ public class ManScript : MonoBehaviour {
         {
             checkTemp();
 
-            if (isFrozen == true)
+            if (isFrozen == false)
             {
                 enableGrav();
             }
         }
 
-        if (isFrozen == true)
+        if (isFrozen == false)
         {
             checkHeight();
         }
