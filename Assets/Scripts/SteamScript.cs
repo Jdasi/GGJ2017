@@ -15,7 +15,7 @@ public class SteamScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        checkCold();
+        
     }
 
     void OnTriggerStay2D(Collider2D coll)
@@ -34,7 +34,6 @@ public class SteamScript : MonoBehaviour {
     {
         GameObject steam = GameObject.Find("Steam particle effect");
 
-        GameObject background = GameObject.Find("Winter");
         if (!world_state.is_hot)
         {
             //cold = true;
@@ -47,6 +46,14 @@ public class SteamScript : MonoBehaviour {
             //cold = false;
 
             steam.GetComponent<ParticleSystem>().enableEmission = true;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "HeatWaveSource")
+        {
+            checkCold();
         }
     }
 }
