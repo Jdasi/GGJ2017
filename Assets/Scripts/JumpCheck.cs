@@ -7,6 +7,7 @@ public class JumpCheck : MonoBehaviour
 
     void Start()
     {
+
     }
 	
 	void Update()
