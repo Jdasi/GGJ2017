@@ -3,20 +3,20 @@ using System.Collections;
 
 public class BackgroundColour : MonoBehaviour
 {
-    bool isCold = true;
+    bool isCold;
     public float floatAlpha = 0;
     Color lerpedcolor = Color.white;
     float counter = 0;
     // Use this for initialization
     void Start()
     {
+        GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
+        isCold = GameObject.Find("Winter").GetComponent<WinterBackground>().isCold;
     }
 
     //  Update is called once per frame
     void Update()
     {
-        //GameObject background = GameObject.Find("Winter");
-        //isCold = background.GetComponent<WinterBackground>().isCold;
         Color alpha = GetComponent<SpriteRenderer>().color;
         if (Input.GetKeyDown("space"))
         {

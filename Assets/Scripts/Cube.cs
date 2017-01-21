@@ -5,12 +5,14 @@ public class Cube : MonoBehaviour {
 
     Color temperature; 
     BoxCollider2D col;
-    bool coldorhot; 
+    
+    bool isCold; 
     // Use this for initialization
     void Start()
     {
         col = gameObject.GetComponent<BoxCollider2D>();
         col.size = new Vector3(1, 1, 1) / 2;
+       isCold = GameObject.Find("WinterBackground").GetComponent<WinterBackground>().isCold; 
     }
 
     // Update is called once per frame
@@ -30,15 +32,13 @@ public class Cube : MonoBehaviour {
 
         IEnumerator Activate()
         {
-            switch(coldorhot)
+            switch(isCold)
             {
                 case true:
                 temperature = Color.blue;
-                coldorhot = false;  
                     break;
                 case false:
                 temperature = Color.red;
-                coldorhot = true; 
                     break; 
             }
             gameObject.GetComponent<Renderer>().material.color = temperature;
