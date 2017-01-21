@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         {
             playerAnimator.transform.localScale = new Vector2(0.5f, playerAnimator.transform.localScale.y);
         }
-        else
+        if (input.x < 0)
         {
             playerAnimator.transform.localScale = new Vector2(-0.5f, playerAnimator.transform.localScale.y);
         }
