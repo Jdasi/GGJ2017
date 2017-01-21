@@ -3,7 +3,6 @@ using System.Collections;
 
 public class IceBlockScript : MonoBehaviour
 {
-
     bool isFrozen = true;
 
     // Use this for initialization

@@ -44,7 +44,7 @@ public class enemyMovement : MonoBehaviour {
 
 	}
 
-    void OnCollisionEnter2D(Collision2D coll)
+    void OnTriggerEnter(Collision2D coll)
     {
         if(coll.gameObject.tag == "Platform")
         {
