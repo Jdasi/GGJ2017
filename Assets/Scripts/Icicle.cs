@@ -7,18 +7,12 @@ public class Icicle : MonoBehaviour {
     public bool triggered = false;
 
     private int i = 0;
-<<<<<<< HEAD
+
     private int fallChance;
 
-//<<<<<<< HEAD
-
-//=======
-    private Rigidbody2D[] rigid_body;
-//>>>>>>> origin/master
-=======
 
     private Rigidbody2D[] rigid_body;
->>>>>>> origin/master
+
 
     void Start () 
     {
