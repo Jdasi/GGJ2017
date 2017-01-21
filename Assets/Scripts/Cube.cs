@@ -3,7 +3,9 @@ using System.Collections;
 
 public class Cube : MonoBehaviour {
 
-    BoxCollider2D col; 
+    Color temperature; 
+    BoxCollider2D col;
+    bool coldorhot; 
     // Use this for initialization
     void Start()
     {
@@ -28,12 +30,22 @@ public class Cube : MonoBehaviour {
 
         IEnumerator Activate()
         {
-            // yield return new WaitForSeconds(1);
-            gameObject.GetComponent<Renderer>().material.color = Color.green;
+            switch(coldorhot)
+            {
+                case true:
+                temperature = Color.blue;
+                coldorhot = false;  
+                    break;
+                case false:
+                temperature = Color.red;
+                coldorhot = true; 
+                    break; 
+            }
+            gameObject.GetComponent<Renderer>().material.color = temperature;
             col.size = new Vector3(2, 2, 2);
             yield return new WaitForSeconds(1);
             col.size = new Vector3(1, 1, 1) / 2;
-            gameObject.GetComponent<Renderer>().material.color = Color.white;
+            //gameObject.GetComponent<Renderer>().material.color = Color.white;
         }
 
    

@@ -17,8 +17,6 @@ public class BlockMoveScript : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-       // if (GetComponent<OnScreenScript>().checkOnScreen())
-        {
             checkTemp();
 
             if (checkFrozen() != true)
@@ -26,7 +24,6 @@ public class BlockMoveScript : MonoBehaviour {
                 checkDirection();
                 moveBlock();
             }
-        }
     }
 
     void checkDirection()
