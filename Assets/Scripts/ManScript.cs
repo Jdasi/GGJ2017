@@ -9,9 +9,12 @@ public class ManScript : MonoBehaviour {
     public float deathHeight = -1;
     float timeLeft = 0.2f;
     bool isDead = false;
+    private WorldState world_state;
 
     // Use this for initialization
     void Start () {
+        world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
+
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY;
 
         Color tmp = GetComponent<SpriteRenderer>().color;
@@ -50,13 +53,14 @@ public class ManScript : MonoBehaviour {
 
     void checkTemp()
     {
-        GameObject background = GameObject.Find("Winter");
-        if (background.GetComponent<WinterBackground>().isCold)
+        GameObject state = GameObject.Find("Wind particle effect");
+
+        if (!world_state.is_hot)
         {
             isFrozen = true;
         }
 
-        else if (background.GetComponent<WinterBackground>().isCold != true)
+        else 
         {
             isFrozen = false;
         }
@@ -74,7 +78,6 @@ public class ManScript : MonoBehaviour {
 
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
 
-        isFrozen = true;
     }
 
     void checkHeight()
