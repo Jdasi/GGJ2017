@@ -7,7 +7,8 @@ public class ButtonPress : MonoBehaviour {
     private float timeLeft = 3;
     private GameObject bridge;
     Vector3 rotationEuler;
-	// Use this for initialization
+
+
 	void Start () {
         bridge = GameObject.Find("Drawbridge");
 	}
@@ -16,24 +17,23 @@ public class ButtonPress : MonoBehaviour {
     void Update () {
         //if player on trigger and not fully dropped
 
-        //To convert Quaternion -> Euler, use eulerAngles
         print(transform.rotation.eulerAngles);
 	    if (dropBridge)
         {
-            if(bridge.transform.localRotation.z < 90)
+            if(bridge.transform.rotation.z < -0.75)
             {
-                rotationEuler += Vector3.forward * 30 * Time.deltaTime; //increment 30 degrees every second
+                Debug.Log(bridge.transform.rotation.z);
+                rotationEuler -= Vector3.forward * 30 * Time.deltaTime; //increment 30 degrees every second
                 bridge.transform.rotation = Quaternion.Euler(rotationEuler);
-
-            }
-            //bridge.transform.Rotate(0, 0, 90);
-            
+            }            
         }
         else if(!dropBridge)
         {
-            //if (bridge.transform.localRotation.z > 90)
-            //    bridge.transform.Rotate(0, 0, 0);
-            
+            if (bridge.transform.rotation.z > -0.75)
+            {
+                rotationEuler += Vector3.forward * 30 * Time.deltaTime; //increment 30 degrees every second
+                bridge.transform.rotation = Quaternion.Euler(rotationEuler);
+            }
         }
 
     }
