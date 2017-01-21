@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class WorldState : MonoBehaviour
 {
     public bool is_hot = false;
-    public HeatWaveObject[] heatwave_objects;
+    public List<HeatWaveObject> heatwave_objects;
     public float expand_duration = 1f;
 
     private float max_heatwave_radius = 100f;
@@ -19,7 +20,12 @@ public class WorldState : MonoBehaviour
 
     void Start()
     {
-        heatwave_objects = GameObject.FindObjectsOfType<HeatWaveObject>();
+        HeatWaveObject[] temp = GameObject.FindObjectsOfType<HeatWaveObject>();
+        foreach (HeatWaveObject obj in temp)
+        {
+            heatwave_objects.Add(obj);
+        }
+
         circle_collider = GetComponent<CircleCollider2D>();
         heatwave_sprite = GameObject.Find("HeatWaveSprite").GetComponent<SpriteRenderer>();
 

@@ -73,8 +73,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc3a596cd84bac4db9bffdbf2bd1ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cold_sprite: {fileID: 21300000, guid: b493255ac83fca840ba2db724f2cc2e6, type: 3}
-  hot_sprite: {fileID: 21300000, guid: aef853b39c9df4d4c870b63558ccb60e, type: 3}
+  cold_sprite: {fileID: 21300000, guid: 6593558fb37748e4787a0ee111886a9f, type: 3}
+  hot_sprite: {fileID: 21300000, guid: 6980d896072733e42ba8641632c4bfee, type: 3}
   visible_in_cold: 1
   visible_in_hot: 1
 --- !u!212 &21288190
@@ -103,7 +103,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 949163575
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b493255ac83fca840ba2db724f2cc2e6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6593558fb37748e4787a0ee111886a9f, type: 3}
   m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
   m_FlipX: 0
   m_FlipY: 0
