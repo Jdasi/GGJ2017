@@ -6,11 +6,8 @@ public class Icicle : MonoBehaviour {
 
     public bool triggered = false;
 
-    public float delay = 5.0f;
-
-    public Vector2 crushPosition;
-
     private int i = 0;
+<<<<<<< HEAD
     private int fallChance;
 
 //<<<<<<< HEAD
@@ -18,9 +15,13 @@ public class Icicle : MonoBehaviour {
 //=======
     private Rigidbody2D[] rigid_body;
 //>>>>>>> origin/master
+=======
 
+    private Rigidbody2D[] rigid_body;
+>>>>>>> origin/master
 
-    void Start () {
+    void Start () 
+    {
         InvokeRepeating("checkFallChance", 0.5f, Random.Range(1f, 2.0f));
 
         for (int i = 0; i < icicles.Length; i++)
@@ -38,7 +39,7 @@ public class Icicle : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player")
         {
             triggered = true;   
         }
@@ -46,6 +47,7 @@ public class Icicle : MonoBehaviour {
 
     void moveIcicle(int i)
     {
+<<<<<<< HEAD
 //<<<<<<< HEAD
 
         //crushPosition.x = (icicles[i].transform.position.x);
@@ -65,13 +67,15 @@ public class Icicle : MonoBehaviour {
         // icicles[i].transform.position = Vector2.Lerp(icicles[i].transform.position, crushPosition, 5);
         //Vector2.MoveTowards(icicles[i].transform.position, crushPosition, delay * Time.deltaTime);
 //>>>>>>> origin/master
+=======
+        icicles[i].AddComponent<Rigidbody2D>();
+>>>>>>> origin/master
     }
 
     void checkFallChance()
     {
         if (triggered)
         {
-            fallChance = Random.Range(1, 100);
             if (i < icicles.Length)
             {
                 moveIcicle(i);

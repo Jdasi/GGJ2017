@@ -340,10 +340,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   is_hot: 0
-  tiles: []
-  expand_duration: 10
-  max_heatwave_radius: 1000
-  heatwave_cooldown: 10
+  heatwave_objects: []
+  expand_duration: 1
 --- !u!114 &11481598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -357,7 +355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 9506724}
   climb_speed: 0
-  move_speed: 30
+  move_speed: 20
   drag_speed: 20
   jump_force: 500
   air_control: 0.33
