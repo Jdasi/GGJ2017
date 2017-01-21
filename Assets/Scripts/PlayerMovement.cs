@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float air_control = 0.25f;
 
     public bool on_ladder = false;
+    public bool on_ice = false;
 
     private BoxCollider2D box_collider;
     private Rigidbody2D rigid_body;
@@ -53,10 +54,21 @@ public class PlayerMovement : MonoBehaviour
             rigid_body.gravityScale = 0;
             climb_velocity = climb_speed * Input.GetAxisRaw("Vertical");
             rigid_body.velocity = new Vector2(rigid_body.velocity.x, climb_velocity);
+            
         }
         if (!on_ladder)
         {
             rigid_body.gravityScale = gravity_store;
+        }
+
+
+
+        if(on_ice)
+        {
+            drag_speed = 0;
+        } else if (!on_ice)
+        {
+            drag_speed = 5.0f;
         }
     }
 

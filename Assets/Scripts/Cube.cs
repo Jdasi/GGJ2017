@@ -1,27 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Cube : MonoBehaviour {
+public class Cube : MonoBehaviour
+{
 
     Color temperature; 
     BoxCollider2D col;
-    bool coldorhot; 
+    public bool ItColdYeh; 
+    bool isCold = false; 
     // Use this for initialization
     void Start()
     {
         col = gameObject.GetComponent<BoxCollider2D>();
         col.size = new Vector3(1, 1, 1) / 2;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        isCold = GameObject.Find("Winter").GetComponent<WinterBackground>().isCold;
+        ItColdYeh = isCold;
     }
-    void OnMouseEnter()
-    {
-        StartCoroutine(Activate()); 
-    }
+    //void OnMouseEnter()
+    //{
+    //    StartCoroutine(Activate()); 
+    //}
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -30,15 +34,13 @@ public class Cube : MonoBehaviour {
 
         IEnumerator Activate()
         {
-            switch(coldorhot)
+            switch(isCold)
             {
                 case true:
                 temperature = Color.blue;
-                coldorhot = false;  
                     break;
                 case false:
                 temperature = Color.red;
-                coldorhot = true; 
                     break; 
             }
             gameObject.GetComponent<Renderer>().material.color = temperature;
@@ -47,6 +49,6 @@ public class Cube : MonoBehaviour {
             col.size = new Vector3(1, 1, 1) / 2;
             //gameObject.GetComponent<Renderer>().material.color = Color.white;
         }
-
+        
    
     }
