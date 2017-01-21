@@ -6,15 +6,16 @@ public class WindScript : MonoBehaviour {
     float windSpeed = 3;
     float maxDistance = 10;
     bool cold = true;
+    private WorldState world_state;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
+    // Use this for initialization
+    void Start () {
+        world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
-	
+        checkCold();
 	}
 
     void OnTriggerStay2D(Collider2D coll)
@@ -32,15 +33,18 @@ public class WindScript : MonoBehaviour {
 
     void checkCold()
     {
-        GameObject background = GameObject.Find("Winter");
-        if (background.GetComponent<WinterBackground>().isCold)
+        GameObject wind  = GameObject.Find("Wind particle effect");
+
+        if (!world_state.is_hot)
         {
             cold = true;
+            wind.GetComponent<ParticleSystem>().enableEmission = true;
         }
 
         else
         {
             cold = false;
+            wind.GetComponent<ParticleSystem>().enableEmission = false;
         }
     }
 }
