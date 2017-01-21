@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator.SetFloat("Speed", Mathf.Abs(input.x));
 
         //flip animation root direction
-        if (input.x >= 0)
+        if (input.x > 0)
         {
             playerAnimator.transform.localScale = new Vector2(0.5f, playerAnimator.transform.localScale.y);
         }
