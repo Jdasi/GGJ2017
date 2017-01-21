@@ -3958,8 +3958,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d5490122a6c344db32dfc64899e2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
+  is_hot: 0
   tiles: []
+  heat_wave_speed: 20
 --- !u!4 &1359446094
 Transform:
   m_ObjectHideFlags: 0
