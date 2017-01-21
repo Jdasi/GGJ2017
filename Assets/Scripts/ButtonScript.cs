@@ -21,6 +21,7 @@ public class ButtonScript : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.K))
         {
             moveDoor = true;
+            //play click sound
         }
 
         if (moveDoor)
