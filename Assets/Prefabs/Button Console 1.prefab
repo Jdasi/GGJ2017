@@ -46,7 +46,6 @@ GameObject:
   - 33: {fileID: 3326132}
   - 65: {fileID: 6575918}
   - 23: {fileID: 2333318}
-  - 114: {fileID: 11430708}
   m_Layer: 0
   m_Name: Button Console 1
   m_TagString: Untagged
@@ -279,17 +278,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3feb86a2f2530444af3eb9eb1ef0230, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11430708
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 118172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f593fe7ce125e045887ef12085fc262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21286868

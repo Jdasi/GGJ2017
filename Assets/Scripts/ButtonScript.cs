@@ -19,7 +19,7 @@ public class ButtonScript : MonoBehaviour {
         //if player is nearby
         //if player presses gamepad interact key
 
-        if (GetComponent<OnScreenScript>().checkOnScreen())
+        if (GetComponent<Renderer>().isVisible)
         {
             if (Input.GetKeyDown(KeyCode.K))
             {

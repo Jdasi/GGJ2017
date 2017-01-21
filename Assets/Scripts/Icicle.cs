@@ -4,9 +4,9 @@ using System.Collections;
 public class Icicle : MonoBehaviour {
     public GameObject[] icicles;
     public bool triggered = false;
-   // public Collider2D collider;
+    public float delay = 2.0f;
 
-
+    public int integer = 0;
 
     void Start () {
 	    //Collider2D col = GameObject.Find
@@ -14,14 +14,10 @@ public class Icicle : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(triggered)
-        {
-            for (int i = 0; i < icicles.Length; i++)
-            {
-                StartCoroutine(ExecuteAfterTime(200));
-                icicles[i].transform.position += Vector3.down * 10 * Time.deltaTime;
-            }
-        }
+        //if(triggered)
+        //{
+           
+        //}
 
 	}
 
@@ -29,13 +25,19 @@ public class Icicle : MonoBehaviour {
     {
         if(col.gameObject.tag == "Player")
         {
-            //Debug.Log("Triggered");
-            triggered = true;
+            for (int i = 0; i < icicles.Length; i++)
+            {
+                StartCoroutine(ExecuteAfterTime());
+                icicles[i].transform.position += Vector3.down * 10 * Time.deltaTime;
+               // integer++;
+            }
         }
     }
 
-    IEnumerator ExecuteAfterTime(float time)
+    IEnumerator ExecuteAfterTime()
     {
-        yield return new WaitForSeconds(time);
+        //Debug.Log(delay);
+        yield return new WaitForSeconds(2f);
+
     }
 }

@@ -27,8 +27,6 @@ public class enemyMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (GetComponent<OnScreenScript>().checkOnScreen())
-        {
             if (moveLeft && checkMove)
             {
                 transform.position += Vector3.left * speed * Time.deltaTime;
@@ -43,8 +41,6 @@ public class enemyMovement : MonoBehaviour {
             {
                 setFrozen();
             }
-        }
-
 	}
 
     void OnTriggerEnter2D(Collider2D coll)

@@ -4,8 +4,8 @@ using System.Collections;
 public class WinterBackground : MonoBehaviour {
     public bool isCold = true;
     public float floatAlphaCold = 0;
-    public Material mat1;
-    public Material mat2;
+    //public Material mat1;
+    //blic Material mat2;
     float counter = 0;
     bool inTransition = false;
     // Use this for initialization
