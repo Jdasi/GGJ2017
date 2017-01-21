@@ -12,6 +12,7 @@ public class WorldState : MonoBehaviour
 
     private bool expanding = false;
     private CircleCollider2D circle_collider;
+    private SpriteRenderer heatwave_sprite;
 
     private float timer = 0f;
     private float size_counter = 0f;
@@ -20,6 +21,7 @@ public class WorldState : MonoBehaviour
     {
         heatwave_objects = GameObject.FindObjectsOfType<HeatWaveObject>();
         circle_collider = GetComponent<CircleCollider2D>();
+        heatwave_sprite = GameObject.Find("HeatWaveSprite").GetComponent<SpriteRenderer>();
 
         heatwave_cooldown = expand_duration;
 
@@ -32,6 +34,7 @@ public class WorldState : MonoBehaviour
         {
             size_counter += Time.deltaTime;
             circle_collider.radius = Mathf.Lerp(0f, max_heatwave_radius, size_counter / expand_duration);
+            heatwave_sprite.transform.localScale = Vector3.Lerp(Vector3.one, new Vector3(1100, 1100, 1), size_counter / expand_duration);
         }
 
         if (timer > 0)
@@ -45,6 +48,7 @@ public class WorldState : MonoBehaviour
                 expanding = false;
                 timer = 0f;
                 circle_collider.radius = 0f;
+                heatwave_sprite.transform.localScale = Vector3.one;
                 react_all();
             }
         }
@@ -57,6 +61,9 @@ public class WorldState : MonoBehaviour
             timer = heatwave_cooldown;
             size_counter = 0f;
             circle_collider.radius = 0f;
+            heatwave_sprite.transform.localScale = Vector3.one;
+
+            heatwave_sprite.color = is_hot ? new Color(1, 0, 0, 0.33f) : new Color(0, 1, 1, 0.33f);
         }
     }
 
