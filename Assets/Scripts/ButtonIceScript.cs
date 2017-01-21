@@ -15,7 +15,7 @@ public class ButtonIceScript : MonoBehaviour {
 
         if (isAlive)
         {
-            GameObject background = GameObject.Find("scrollingBackground");
+            GameObject background = GameObject.Find("BackgroundColour");
 
             if (background.GetComponent<BackgroundColour>().isCold != true)
             {

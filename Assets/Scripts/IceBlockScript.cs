@@ -19,7 +19,7 @@ public class IceBlockScript : MonoBehaviour
 
     void checkTemp()
     {
-        GameObject background = GameObject.Find("scrollingBackground");
+        GameObject background = GameObject.Find("BackgroundColour");
         if (background.GetComponent<BackgroundColour>().isCold)
         {
             isFrozen = true;
