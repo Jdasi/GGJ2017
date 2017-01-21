@@ -14,6 +14,7 @@ GameObject:
   - 61: {fileID: 6122532}
   - 61: {fileID: 6139538}
   - 114: {fileID: 11416288}
+  - 114: {fileID: 11499390}
   m_Layer: 8
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -106,6 +107,17 @@ MonoBehaviour:
   speed: 0
   normalSprite: {fileID: 21300000, guid: 62220f05110642d43b0587c82c58ed62, type: 3}
   frozenSprite: {fileID: 21300000, guid: 22315d425ff8256428322ca9333bc601, type: 3}
+--- !u!114 &11499390
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f593fe7ce125e045887ef12085fc262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21243650
 SpriteRenderer:
   m_ObjectHideFlags: 1

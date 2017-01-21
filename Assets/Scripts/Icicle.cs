@@ -13,6 +13,7 @@ public class Icicle : MonoBehaviour {
         for (int i = 0; i < icicles.Length; i++)
         {
             icicles[i].transform.position = new Vector2(1,0);
+            icicles[i].transform.position.y -= 1;
         }
 
 	}
