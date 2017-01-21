@@ -55,12 +55,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (jump_check.can_jump)
         {
-            playerAnimator.SetBool("IsAirborn", true);
+            playerAnimator.SetBool("IsAirborn", false);
             rigid_body.AddForce(new Vector2(input.x * move_speed * Time.deltaTime, 0), ForceMode2D.Impulse);
         }
         else
         {
-            playerAnimator.SetBool("IsAirborn", false);
+            playerAnimator.SetBool("IsAirborn", true);
             rigid_body.AddForce(new Vector2(input.x * (move_speed * air_control) * Time.deltaTime, 0), ForceMode2D.Impulse);
         }
 

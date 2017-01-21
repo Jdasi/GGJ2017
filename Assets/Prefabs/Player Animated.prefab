@@ -86,18 +86,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &176720
+--- !u!1 &167956
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 436528}
-  - 212: {fileID: 21270416}
+  - 4: {fileID: 459720}
+  - 114: {fileID: 11441814}
+  - 58: {fileID: 5836826}
   m_Layer: 0
-  m_Name: Graphic Old
-  m_TagString: Untagged
+  m_Name: WorldStateManager
+  m_TagString: HeatWaveSource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,7 +162,7 @@ Transform:
   - {fileID: 426580}
   - {fileID: 447480}
   m_Father: {fileID: 454258}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &410336
 Transform:
   m_ObjectHideFlags: 1
@@ -173,7 +174,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 454258}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!4 &426580
 Transform:
   m_ObjectHideFlags: 1
@@ -186,18 +187,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 407804}
   m_RootOrder: 2
---- !u!4 &436528
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 176720}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5882353, z: 1}
-  m_Children: []
-  m_Father: {fileID: 454258}
-  m_RootOrder: 0
 --- !u!4 &447480
 Transform:
   m_ObjectHideFlags: 1
@@ -217,14 +206,26 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 166976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2321596, y: -0.98012686, z: 0}
+  m_LocalPosition: {x: -2.8518028, y: 1.29, z: 0}
   m_LocalScale: {x: 0.2, y: 0.17, z: 1}
   m_Children:
-  - {fileID: 436528}
   - {fileID: 407804}
   - {fileID: 410336}
+  - {fileID: 459720}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &459720
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.959015, y: 4.2352943, z: 0}
+  m_LocalScale: {x: 5, y: 5.882353, z: 1}
+  m_Children: []
+  m_Father: {fileID: 454258}
+  m_RootOrder: 2
 --- !u!4 &474674
 Transform:
   m_ObjectHideFlags: 1
@@ -254,6 +255,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &5836826
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167956}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 500
 --- !u!58 &5866664
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -331,6 +346,23 @@ MonoBehaviour:
   jump_force: 500
   air_control: 0.33
   on_ladder: 0
+  on_ice: 0
+--- !u!114 &11441814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d5490122a6c344db32dfc64899e2c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  is_hot: 0
+  tiles: []
+  expand_duration: 30
+  max_heatwave_radius: 500
+  heatwave_cooldown: 1
 --- !u!114 &11471760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -461,36 +493,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b31780f00dc054d4986eb935fe524967, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_FlipX: 0
-  m_FlipY: 0
---- !u!212 &21270416
-SpriteRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 176720}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 22e9e272693b7684dbd61f539d4aecd1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!212 &21281642
