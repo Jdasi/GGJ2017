@@ -3,6 +3,7 @@ using System.Collections;
 
 public class WorldState : MonoBehaviour
 {
+
     public bool is_hot = false;
     public HeatWaveObject[] tiles;
 
@@ -54,4 +55,5 @@ public class WorldState : MonoBehaviour
             circle_collider.radius = 0f;
         }
 	}
+
 }

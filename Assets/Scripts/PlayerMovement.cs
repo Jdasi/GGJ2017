@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Animator playerAnimator;
+
     public float climb_speed = 0;
     public float move_speed = 5.0f;
     public float drag_speed = 5.0f;
@@ -38,10 +40,29 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-        if (jump_check.can_jump)
-            rigid_body.AddForce(new Vector2(input.x * move_speed * Time.deltaTime, 0), ForceMode2D.Impulse);
+        //set animation speed
+        playerAnimator.SetFloat("Speed", Mathf.Abs(input.x));
+
+        //flip animation root direction
+        if (input.x >= 0)
+        {
+            playerAnimator.transform.localScale = new Vector2(0.5f, playerAnimator.transform.localScale.y);
+        }
         else
+        {
+            playerAnimator.transform.localScale = new Vector2(-0.5f, playerAnimator.transform.localScale.y);
+        }
+
+        if (jump_check.can_jump)
+        {
+            playerAnimator.SetBool("IsAirborn", true);
+            rigid_body.AddForce(new Vector2(input.x * move_speed * Time.deltaTime, 0), ForceMode2D.Impulse);
+        }
+        else
+        {
+            playerAnimator.SetBool("IsAirborn", false);
             rigid_body.AddForce(new Vector2(input.x * (move_speed * air_control) * Time.deltaTime, 0), ForceMode2D.Impulse);
+        }
 
         if (input.x == 0 && jump_check.can_jump)
 		{
