@@ -9,23 +9,25 @@ public class enemyMovement : MonoBehaviour {
     public float speed;
     private int moveChance;
     private bool checkMove;
-    private bool isFrozen;
+    //private bool isFrozen;
 
     public Sprite normalSprite;
     public Sprite frozenSprite;
 
-	void Start ()
+    private WorldState world_state;
+
+    void Start ()
     {
         moveLeft = true;
         checkMove = true;
-        isFrozen = false;
         speed = 3;   
         InvokeRepeating("checkMoveChance", 1.0f, Random.Range(2.0f, 5.0f));
+        world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
 
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
             if (moveLeft && checkMove)
             {
@@ -37,10 +39,8 @@ public class enemyMovement : MonoBehaviour {
             }
 
 
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                setFrozen();
-            }
+            setFrozen();
+            
 	}
 
     void OnTriggerEnter2D(Collider2D coll)
@@ -54,7 +54,7 @@ public class enemyMovement : MonoBehaviour {
 
     void checkMoveChance()
     {
-        if(!isFrozen)
+        if(world_state.is_hot)
         {
             moveChance = Random.Range(1, 100);
             if(moveChance >= 1 && moveChance <= 30)
@@ -71,14 +71,12 @@ public class enemyMovement : MonoBehaviour {
 
     void setFrozen()
     {
-        isFrozen = !isFrozen;
-
-        if(isFrozen)
+        if(!world_state.is_hot)
         {
             checkMove = false;
             GetComponent<SpriteRenderer>().sprite = frozenSprite;
         }
-        else
+        else if(world_state.is_hot)
         {
             checkMove = true;
             GetComponent<SpriteRenderer>().sprite = normalSprite;
