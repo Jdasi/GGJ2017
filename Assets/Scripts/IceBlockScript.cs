@@ -19,16 +19,19 @@ public class IceBlockScript : MonoBehaviour
 
     void checkTemp()
     {
-        GameObject background = GameObject.Find("BackgroundColour");
-        if (background.GetComponent<BackgroundColour>().isCold)
+        GameObject background = GameObject.Find("Winter");
+        if (background.GetComponent<WinterBackground>().isCold)
         {
+           // Debug.Log("cold");
+
             isFrozen = true;
             changeOpacity();
             changeCollider();
         }
 
-        else if (background.GetComponent<BackgroundColour>().isCold != true)
+        else if (background.GetComponent<WinterBackground>().isCold != true)
         {
+            //Debug.Log("hot");
             isFrozen = false;
             changeOpacity();
             changeCollider();

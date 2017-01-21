@@ -18,6 +18,7 @@ public class BackgroundColour : MonoBehaviour
         Color alpha = GetComponent<SpriteRenderer>().color;
         if (Input.GetKeyDown("space"))
         {
+            Debug.Log("sPACE PRESSED");
             if (alpha.a == 1 || alpha.a < 0)
             {
                 if (isCold == true)
@@ -30,6 +31,7 @@ public class BackgroundColour : MonoBehaviour
                 }
                 counter = 0;
             }
+           
         }
         switch (isCold)
         {

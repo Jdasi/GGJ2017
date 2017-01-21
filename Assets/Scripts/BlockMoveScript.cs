@@ -67,14 +67,14 @@ public class BlockMoveScript : MonoBehaviour {
 
     void checkTemp()
     {
-        GameObject background = GameObject.Find("BackgroundColour");
-        if (background.GetComponent<BackgroundColour>().isCold)
+        GameObject background = GameObject.Find("Winter");
+        if (background.GetComponent<WinterBackground>().isCold)
         {
             isFrozen = true;
             //set sprite to frozen;   
         }
 
-        else if (background.GetComponent<BackgroundColour>().isCold != true)
+        else if (background.GetComponent<WinterBackground>().isCold != true)
         {
             isFrozen = false;
             //set sprite to normal;

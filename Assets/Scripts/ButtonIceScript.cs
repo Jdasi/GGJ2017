@@ -15,9 +15,9 @@ public class ButtonIceScript : MonoBehaviour {
 
         if (isAlive)
         {
-            GameObject background = GameObject.Find("BackgroundColour");
+            GameObject background = GameObject.Find("Winter");
 
-            if (background.GetComponent<BackgroundColour>().isCold != true)
+            if (background.GetComponent<WinterBackground>().isCold != true)
             {
                 Destroy(gameObject);
             }
