@@ -12,11 +12,13 @@ public class HeatWaveObject : MonoBehaviour
 
     private WorldState world_state;
     private SpriteRenderer sprite;
+    private BoxCollider2D box_collider;
 
 	void Start()
     {
         world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
         sprite = GetComponent<SpriteRenderer>();
+        box_collider = GetComponent<BoxCollider2D>();
 	}
 	
 	void Update ()
@@ -27,12 +29,29 @@ public class HeatWaveObject : MonoBehaviour
     public void react()
     {
         if (!world_state.is_hot && visible_in_cold)
-            gameObject.SetActive(true);
+        {
+            sprite.enabled = true;
+            box_collider.isTrigger = false;
+        }
         else if (world_state.is_hot && visible_in_hot)
-            gameObject.SetActive(true);
+        {
+            sprite.enabled = true;
+            box_collider.isTrigger = false;
+        }
         else
-            gameObject.SetActive(false);
+        {
+            sprite.enabled = false;
+            box_collider.isTrigger = true;
+        }
 
         sprite.sprite = world_state.is_hot ? hot_sprite : cold_sprite;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "HeatWaveSource")
+        {
+            react();
+        }
     }
 }
