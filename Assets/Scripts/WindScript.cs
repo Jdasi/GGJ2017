@@ -23,7 +23,7 @@ public class WindScript : MonoBehaviour {
         {
             if (coll.tag == "Player")
             {
-                coll.GetComponent<Rigidbody2D>().AddForce(transform.right * -17.5f);
+                coll.GetComponent<Rigidbody2D>().AddForce(transform.right * -18f);
 
                 //play wind sound 
             }
