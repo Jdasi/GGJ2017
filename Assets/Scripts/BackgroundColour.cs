@@ -6,9 +6,6 @@ public class BackgroundColour : MonoBehaviour
     public bool isCold = true;
     Color lerpedcolor = Color.white;
     float counter = 0;
-
-    public float hotness = 0;
-    public float coldness = 100;
     // Use this for initialization
     void Start()
     {
@@ -21,15 +18,20 @@ public class BackgroundColour : MonoBehaviour
         Color alpha = GetComponent<SpriteRenderer>().color;
         if (Input.GetKeyDown("space"))
         {
-            if (isCold == true)
+            Debug.Log("sPACE PRESSED");
+            if (alpha.a == 1 || alpha.a < 0)
             {
-                isCold = false;
+                if (isCold == true)
+                {
+                    isCold = false;
+                }
+                else
+                {
+                    isCold = true;
+                }
+                counter = 0;
             }
-            else
-            {
-                isCold = true;
-            }
-            counter = 0;
+           
         }
         switch (isCold)
         {

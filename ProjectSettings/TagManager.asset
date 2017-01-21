@@ -4,6 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Obstacle
+  - Ladder
+  - Enemy
+  - Platform
+  - Cube
   - Tile
   layers:
   - Default
@@ -15,8 +20,8 @@ TagManager:
   - 
   - 
   - Obstacle
-  - 
-  - 
+  - Enemy
+  - Background
   - 
   - 
   - 
@@ -41,4 +46,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 534439165
+    locked: 0
+  - name: Player
+    uniqueID: 2896502893
+    locked: 0
+  - name: Objects
+    uniqueID: 711629959
+    locked: 0
+  - name: 
+    uniqueID: 949163575
     locked: 0

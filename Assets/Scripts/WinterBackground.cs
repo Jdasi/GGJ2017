@@ -3,11 +3,10 @@ using System.Collections;
 
 public class WinterBackground : MonoBehaviour {
     public bool isCold = true;
+    public float floatAlpha = 0; 
     Color lerpedcolor = Color.white;
     float counter = 0;
-
-    public float hotness = 0;
-    public float coldness = 100;
+    bool inTransition = false;
     // Use this for initialization
     void Start()
     {
@@ -20,15 +19,18 @@ public class WinterBackground : MonoBehaviour {
         Color alpha = GetComponent<SpriteRenderer>().color;
         if (Input.GetKeyDown("space"))
         {
-            if (isCold == true)
+            if (alpha.a == 1 || alpha.a < 0)
             {
-                isCold = false;
+                if (isCold == true)
+                {
+                    isCold = false;
+                }
+                else
+                {
+                    isCold = true;
+                }
+                counter = 0;
             }
-            else
-            {
-                isCold = true;
-            }
-            counter = 0;
         }
         switch (isCold)
         {
@@ -40,7 +42,7 @@ public class WinterBackground : MonoBehaviour {
                 GetComponent<SpriteRenderer>().color = Color.Lerp(Color.blue, Color.red, counter += Time.deltaTime);
                 break;
             case false:
-                if (alpha.a > -0.99)
+                if (alpha.a > 0)
                 {
                     alpha.a -= 0.01f;
                 }
@@ -48,5 +50,6 @@ public class WinterBackground : MonoBehaviour {
                 break;
         }
         GetComponent<SpriteRenderer>().color = alpha;
+        floatAlpha = alpha.a; 
     }
 }
