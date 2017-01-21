@@ -3,19 +3,20 @@ using System.Collections;
 
 public class BackgroundColour : MonoBehaviour
 {
-    bool isHot;
     public bool isWinter; 
     public float floatAlpha = 0;
+    private WorldState world_state;
+
     // Use this for initialization
     void Start()
     {
-        GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
-        isHot = GameObject.Find("WorldStateManager").GetComponent<WorldState>().is_hot;
-        if (this.GetComponent<Sprite>().name == "Winter")
+        world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
+
+        if (gameObject.name == "Winter")
         {
             isWinter = true; 
         }
-        else if (this.GetComponent<Sprite>().name == "Summer")
+        else if (gameObject.name == "Summer")
         {
             isWinter = false; 
         }
@@ -27,18 +28,18 @@ public class BackgroundColour : MonoBehaviour
     void Update()
     {
         Color alpha = GetComponent<SpriteRenderer>().color;
-        if (isWinter == false)
+        if (isWinter)
         {
-            switch (isHot)
+            switch (world_state.is_hot)
             {
-                case false:
+                case true:
                     if (alpha.a > 0.0)
                     {
                         alpha.a -= 0.01f;
                     }
                     // GetComponent<SpriteRenderer>().color = Color.Lerp(Color.blue, Color.red, counter += Time.deltaTime);
                     break;
-                case true:
+                case false:
                     if (alpha.a < 1)
                     {
                         alpha.a += 0.01f;
@@ -47,11 +48,12 @@ public class BackgroundColour : MonoBehaviour
                     break;
             }
         }
+
         else
         {
-            switch (isHot)
+            switch (world_state.is_hot)
             {
-                case false:
+                case true:
                     if (alpha.a < 1)
                     {
                         alpha.a += 0.01f;
@@ -59,7 +61,7 @@ public class BackgroundColour : MonoBehaviour
                     // GetComponent<SpriteRenderer>().color = Color.Lerp(Color.blue, Color.red, counter += Time.deltaTime);
                     //.material.Lerp(mat1, mat2, counter += Time.deltaTime);
                     break;
-                case true:
+                case false:
                     if (alpha.a > 0)
                     {
                         alpha.a -= 0.01f;
@@ -69,8 +71,11 @@ public class BackgroundColour : MonoBehaviour
                     break;
             }
         }
+
+        alpha.a = Mathf.Clamp(alpha.a, 0, 1);
         GetComponent<SpriteRenderer>().color = alpha;
         floatAlpha = alpha.a;
+        
     }
 }
 
