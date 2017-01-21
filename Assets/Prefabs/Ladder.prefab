@@ -25,8 +25,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.45, y: 0.41, z: 0}
-  m_LocalScale: {x: 0.22964075, y: 0.6108757, z: 0.2482603}
+  m_LocalPosition: {x: 50.31247, y: 2.66, z: 0}
+  m_LocalScale: {x: 0.22964075, y: 0.46579254, z: 0.2482603}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -41,9 +41,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.055565756, y: 0}
   serializedVersion: 2
-  m_Size: {x: 3.59, y: 9.65}
+  m_Size: {x: 1.9227096, y: 9.65}
 --- !u!114 &11494154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,9 +55,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a83f3afcce1d74468bd1bc6b5dcba45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  climbVelocity: 5
-  climbSpeed: 5
 --- !u!212 &21297274
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -33,7 +33,7 @@ public class ButtonPress : MonoBehaviour {
             {
                 Debug.Log(currentTime);
                 currentTime += Time.deltaTime;
-                rotationEuler += Vector3.forward * 30 * Time.deltaTime; //increment 30 degrees every second
+                rotationEuler += Vector3.forward * 31 * Time.deltaTime; //increment 30 degrees every second
                 bridge.transform.rotation = Quaternion.Euler(rotationEuler);
             }
         }
