@@ -22,10 +22,10 @@ public class Cube : MonoBehaviour
         isCold = GameObject.Find("Winter").GetComponent<WinterBackground>().isCold;
         ItColdYeh = isCold;
     }
-    void OnMouseEnter()
-    {
-        StartCoroutine(Activate()); 
-    }
+    //void OnMouseEnter()
+    //{
+    //    StartCoroutine(Activate()); 
+    //}
 
     void OnTriggerEnter2D(Collider2D other)
     {
