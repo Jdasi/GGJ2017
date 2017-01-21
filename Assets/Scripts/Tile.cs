@@ -10,12 +10,12 @@ public class Tile : MonoBehaviour
     public bool visible_in_cold = true;
     public bool visible_in_hot = true;
 
-    private HeatWave heat_wave;
+    private WorldState world_state;
     private SpriteRenderer sprite;
 
 	void Start()
     {
-        heat_wave = GameObject.Find("HeatWaveManager").GetComponent<HeatWave>();
+        world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
         sprite = GetComponent<SpriteRenderer>();
 	}
 	
@@ -26,13 +26,13 @@ public class Tile : MonoBehaviour
 
     public void transition()
     {
-        if (!heat_wave.active && visible_in_cold)
+        if (!world_state.is_hot && visible_in_cold)
             gameObject.SetActive(true);
-        else if (heat_wave.active && visible_in_hot)
+        else if (world_state.is_hot && visible_in_hot)
             gameObject.SetActive(true);
         else
             gameObject.SetActive(false);
 
-        sprite.color = heat_wave.active ? hot_color : cold_color;
+        sprite.color = world_state.is_hot ? hot_color : cold_color;
     }
 }
