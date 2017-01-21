@@ -16,12 +16,14 @@ public class MovingPlatformScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-
-        checkTemp();
-
-        if (checkFrozen() != true)
+        if (GetComponent<OnScreenScript>().checkOnScreen())
         {
-            movePlatform();
+            checkTemp();
+
+            if (checkFrozen() != true)
+            {
+                movePlatform();
+            }
         }
     }
 

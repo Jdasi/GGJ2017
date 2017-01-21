@@ -11,31 +11,35 @@ public class ButtonScript : MonoBehaviour {
 	void Start () {
 	
 	}
-	
-	// Update is called once per frame
-	void Update () {
 
-	    //if player is nearby
+    // Update is called once per frame
+    void Update()
+    {
+
+        //if player is nearby
         //if player presses gamepad interact key
 
-        if (Input.GetKeyDown(KeyCode.K))
+        if (GetComponent<OnScreenScript>().checkOnScreen())
         {
-            moveDoor = true;
-            //play click sound
-        }
-
-        if (moveDoor)
-        {
-            GameObject door = GameObject.Find("Door");
-
-            door.transform.position += Vector3.down * 1 * Time.deltaTime;
-
-            timeLeft -= Time.deltaTime;
-
-            if (timeLeft < 0)
+            if (Input.GetKeyDown(KeyCode.K))
             {
-                moveDoor = false;
+                moveDoor = true;
+                //play click sound
+            }
+
+            if (moveDoor)
+            {
+                GameObject door = GameObject.Find("Door");
+
+                door.transform.position += Vector3.down * 1 * Time.deltaTime;
+
+                timeLeft -= Time.deltaTime;
+
+                if (timeLeft < 0)
+                {
+                    moveDoor = false;
+                }
             }
         }
-	}
+    }
 }

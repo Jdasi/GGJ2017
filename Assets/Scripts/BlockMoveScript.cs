@@ -17,13 +17,16 @@ public class BlockMoveScript : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        checkTemp();
-
-        if (checkFrozen() != true)
+        if (GetComponent<OnScreenScript>().checkOnScreen())
         {
-            checkDirection();
-            moveBlock();
-        }      
+            checkTemp();
+
+            if (checkFrozen() != true)
+            {
+                checkDirection();
+                moveBlock();
+            }
+        }
     }
 
     void checkDirection()

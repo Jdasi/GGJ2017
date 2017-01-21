@@ -27,19 +27,22 @@ public class enemyMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-	    if (moveLeft && checkMove)
+        if (GetComponent<OnScreenScript>().checkOnScreen())
         {
-            transform.position += Vector3.left * speed * Time.deltaTime;
-        }
-        else if(!moveLeft && checkMove)
-        {
-            transform.position += Vector3.right * speed * Time.deltaTime;
-        }
+            if (moveLeft && checkMove)
+            {
+                transform.position += Vector3.left * speed * Time.deltaTime;
+            }
+            else if (!moveLeft && checkMove)
+            {
+                transform.position += Vector3.right * speed * Time.deltaTime;
+            }
 
 
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            setFrozen();
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                setFrozen();
+            }
         }
 
 	}

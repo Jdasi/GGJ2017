@@ -11,15 +11,18 @@ public class ButtonIceScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {	
+	void Update () {
 
-        if (isAlive)
+        if (GetComponent<OnScreenScript>().checkOnScreen())
         {
-            GameObject background = GameObject.Find("Winter");
-
-            if (background.GetComponent<WinterBackground>().isCold != true)
+            if (isAlive)
             {
-                Destroy(gameObject);
+                GameObject background = GameObject.Find("Winter");
+
+                if (background.GetComponent<WinterBackground>().isCold != true)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
 	}
