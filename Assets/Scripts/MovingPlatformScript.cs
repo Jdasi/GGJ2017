@@ -4,24 +4,24 @@ using System.Collections;
 public class MovingPlatformScript : MonoBehaviour {
 
     bool moveDirection = true;
-    bool isFrozen = false;
+    bool isFrozen = true;
     public int speed = 1;
     public float maxDistanceRight = 0;
     public float maxDistanceLeft = 0;
+    private WorldState world_state;
 
     // Use this for initialization
     void Start () {
-	
-	}
+        world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-            checkTemp();
 
-            if (checkFrozen() != true)
-            {
-                movePlatform();
-            }
+        if (isFrozen != true)
+        {
+            movePlatform();
+        }
     }
 
     void OnCollisionEnter2D(Collision2D coll)
@@ -57,33 +57,19 @@ public class MovingPlatformScript : MonoBehaviour {
         checkDistance();
     }
 
-    bool checkFrozen()
-    {
-        if (isFrozen)
+    void checkTemp()
+    {  
+        if (!world_state.is_hot)
         {
-            return true;
+            isFrozen = true;
+            //change sprite
         }
 
         else
         {
-            return false;
+            isFrozen = false;
+            //change sprite
         }
-    }
-
-    void checkTemp()
-    {
-        GameObject background = GameObject.Find("scrollingBackground");
-        //if (background.GetComponent<BackgroundColour>().isCold)
-        //{
-        //    isFrozen = true;
-        //    //set sprite to frozen;   
-        //}
-
-        //else if (background.GetComponent<BackgroundColour>().isCold != true)
-        //{
-        //    isFrozen = false;
-        //    //set sprite to normal;
-        //}
     }
 
     void checkDistance()
@@ -96,6 +82,14 @@ public class MovingPlatformScript : MonoBehaviour {
         else if (transform.position.x > maxDistanceLeft)
         {
             changeDirection();
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "HeatWaveSource")
+        {
+            checkTemp();
         }
     }
 }
