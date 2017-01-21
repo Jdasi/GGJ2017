@@ -1876,7 +1876,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11431682, guid: 4171723e66b91424a9cbb05c0dd146c3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4171723e66b91424a9cbb05c0dd146c3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &720232302
@@ -2823,6 +2824,23 @@ Transform:
   - {fileID: 555403486}
   m_Father: {fileID: 0}
   m_RootOrder: 13
+--- !u!1 &963757068 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 133246, guid: 4171723e66b91424a9cbb05c0dd146c3, type: 2}
+  m_PrefabInternal: {fileID: 715566651}
+--- !u!114 &963757070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 963757068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d95362642467d4fb590985cfbf648f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isWinter: 0
+  floatAlpha: 0
 --- !u!1 &979952407 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 172320, guid: 40289a599fe8ce442bd8c96e14b63319, type: 2}
@@ -4126,7 +4144,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_hot: 0
   tiles: []
-  heat_wave_speed: 20
 --- !u!4 &1359446094
 Transform:
   m_ObjectHideFlags: 0
@@ -4800,24 +4817,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
---- !u!1 &1458078698 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 166976, guid: c31cf9ca5be79fb418abb999ebe873ca, type: 2}
-  m_PrefabInternal: {fileID: 1793460544}
---- !u!61 &1458078699
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1458078698}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0.027074516, y: -0.12741789}
-  serializedVersion: 2
-  m_Size: {x: 6.747255, y: 9.374341}
 --- !u!1 &1485155702
 GameObject:
   m_ObjectHideFlags: 0
@@ -6952,7 +6951,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417746, guid: 0c042fab01930334bbc5aba29b16ca5d, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c042fab01930334bbc5aba29b16ca5d, type: 2}

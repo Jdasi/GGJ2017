@@ -13,11 +13,11 @@ public class Icicle : MonoBehaviour {
     private int i = 0;
     private int fallChance;
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
-=======
+//=======
     private Rigidbody2D[] rigid_body;
->>>>>>> origin/master
+//>>>>>>> origin/master
 
 
     void Start () {
@@ -46,7 +46,7 @@ public class Icicle : MonoBehaviour {
 
     void moveIcicle(int i)
     {
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
         //crushPosition.x = (icicles[i].transform.position.x);
         //crushPosition.y = (icicles[i].transform.position.y - 3);
@@ -57,14 +57,14 @@ public class Icicle : MonoBehaviour {
         icicles[i].AddComponent<Rigidbody2D>();
 
 
-=======
+//=======
         Debug.Log(i);
         rigid_body[i].gravityScale = 1;
         crushPosition.x = (icicles[i].transform.position.x);
         crushPosition.y = (icicles[i].transform.position.y - 3);
         // icicles[i].transform.position = Vector2.Lerp(icicles[i].transform.position, crushPosition, 5);
         //Vector2.MoveTowards(icicles[i].transform.position, crushPosition, delay * Time.deltaTime);
->>>>>>> origin/master
+//>>>>>>> origin/master
     }
 
     void checkFallChance()
