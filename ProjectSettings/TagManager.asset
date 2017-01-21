@@ -50,12 +50,12 @@ TagManager:
   - name: Background
     uniqueID: 534439165
     locked: 0
-  - name: Player
-    uniqueID: 2896502893
-    locked: 0
   - name: Objects
     uniqueID: 711629959
     locked: 0
-  - name: 
+  - name: Player
+    uniqueID: 2896502893
+    locked: 0
+  - name: Obstacles
     uniqueID: 949163575
     locked: 0
