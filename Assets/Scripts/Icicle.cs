@@ -7,9 +7,7 @@ public class Icicle : MonoBehaviour {
     public bool triggered = false;
 
     private int i = 0;
-
     private int fallChance;
-
 
     private Rigidbody2D[] rigid_body;
 
@@ -20,8 +18,8 @@ public class Icicle : MonoBehaviour {
 
         for (int i = 0; i < icicles.Length; i++)
         {
-            rigid_body[i] = icicles[i].GetComponent<Rigidbody2D>();
-            rigid_body[i].gravityScale = 0;
+           // rigid_body[i] = icicles[i].GetComponent<Rigidbody2D>();
+            //rigid_body[i].gravityScale = 0;
         }
     }
 
