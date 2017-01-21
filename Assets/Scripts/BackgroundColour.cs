@@ -58,23 +58,3 @@ public class BackgroundColour : MonoBehaviour
 
 
 
-//void OnTriggerEnter()
-//{
-//    StartCoroutine(Activate());
-//}
-
-//IEnumerator Activate()
-//{
-//    // yield return new WaitForSeconds(1);
-//    gameObject.GetComponent<Renderer>().material.color = Color.green;
-//    col.size = new Vector3(2, 2, 2);
-//    //Sound stuff here
-//    wallsound.Play();
-
-//    yield return new WaitForSeconds(1);
-//    col.size = new Vector3(1, 1, 1) / 2;
-//    gameObject.GetComponent<Renderer>().material.color = Color.black;
-//}
-
-//col = gameObject.GetComponent<BoxCollider>();
-//        col.size = new Vector3(1, 1, 1) / 2;

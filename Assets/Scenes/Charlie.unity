@@ -113,7 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d95362642467d4fb590985cfbf648f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCold: 1
   floatAlpha: 0
 --- !u!212 &532500525
 SpriteRenderer:
@@ -287,6 +286,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: aac7eff2ac8dbee4fa2c4da6a8f94d41,
         type: 3}
+    - target: {fileID: 192844, guid: 7a98ee9e3dfbf5c4da8031fbad271443, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a98ee9e3dfbf5c4da8031fbad271443, type: 2}
   m_IsPrefabParent: 0
@@ -336,7 +339,7 @@ Prefab:
         type: 3}
     - target: {fileID: 187052, guid: 438b66c88a1729b42a0c27521a62b5da, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 438b66c88a1729b42a0c27521a62b5da, type: 2}
