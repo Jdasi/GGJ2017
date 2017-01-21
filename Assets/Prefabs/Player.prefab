@@ -354,10 +354,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 9506724}
-  climb_speed: 0
-  move_speed: 20
-  drag_speed: 20
-  jump_force: 500
+  climb_speed: 10
+  move_speed: 700
+  drag_speed: 5
+  jump_force: 300
   air_control: 0.33
   on_ladder: 0
   on_ice: 0

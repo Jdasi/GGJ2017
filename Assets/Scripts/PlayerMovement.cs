@@ -5,10 +5,10 @@ public class PlayerMovement : MonoBehaviour
 {
     public Animator playerAnimator;
 
-    public float climb_speed = 0;
-    public float move_speed = 5.0f;
-    public float drag_speed = 5.0f;
-    public float jump_force = 300.0f;
+    public float climb_speed = 10f;
+    public float move_speed = 5f;
+    public float drag_speed = 5f;
+    public float jump_force = 300f;
     public float air_control = 0.25f;
 
     public bool on_ladder = false;
@@ -18,8 +18,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rigid_body;
     private JumpCheck jump_check;
 
-    private float climb_velocity = 0;
-    private float gravity_store = 0;
+    private float climb_velocity = 0f;
+    private float gravity_store = 0f;
+    private float drag_store = 0f;
 
     void Start () 
     {
@@ -28,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
         jump_check = GetComponentInChildren<JumpCheck>();
 
         gravity_store = rigid_body.gravityScale;
+        drag_store = drag_speed;
     }
     
 	void Update()
@@ -56,12 +58,12 @@ public class PlayerMovement : MonoBehaviour
         if (jump_check.can_jump)
         {
             playerAnimator.SetBool("IsAirborn", false);
-            rigid_body.AddForce(new Vector2(input.x * move_speed * Time.deltaTime, 0), ForceMode2D.Impulse);
+            rigid_body.AddForce(new Vector2(input.x * move_speed * Time.deltaTime, 0), ForceMode2D.Force);
         }
         else
         {
             playerAnimator.SetBool("IsAirborn", true);
-            rigid_body.AddForce(new Vector2(input.x * (move_speed * air_control) * Time.deltaTime, 0), ForceMode2D.Impulse);
+            rigid_body.AddForce(new Vector2(input.x * (move_speed * air_control) * Time.deltaTime, 0), ForceMode2D.Force);
         }
 
         if (input.x == 0 && jump_check.can_jump)
@@ -82,12 +84,13 @@ public class PlayerMovement : MonoBehaviour
             rigid_body.gravityScale = gravity_store;
         }
 
-        if(on_ice)
+        if (on_ice)
         {
             drag_speed = 0;
-        } else if (!on_ice)
+        }
+        else if (!on_ice)
         {
-            drag_speed = 5.0f;
+            drag_speed = drag_store;
         }
     }
 
