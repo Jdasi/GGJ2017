@@ -33,7 +33,7 @@ public class Icicle : MonoBehaviour {
         crushPosition.x = (icicles[i].transform.position.x);
         crushPosition.y = (icicles[i].transform.position.y - 3);
 
-        icicles[i].transform.position = Vector2.Lerp(icicles[i].transform.position, crushPosition, 5);
+        icicles[i].transform.position = Vector2.Lerp(icicles[i].transform.position, crushPosition, 5 * Time.deltaTime);
        // Vector2.Lerp(icicles[i].transform.position, crushPosition, 5);
     }
 

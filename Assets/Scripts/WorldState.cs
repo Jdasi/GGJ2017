@@ -3,34 +3,7 @@ using System.Collections;
 
 public class WorldState : MonoBehaviour
 {
-<<<<<<< HEAD
- //   public bool is_hot = false;
 
- //   public Tile[] tiles;
-
-	//void Start()
- //   {
- //       tiles = GameObject.FindObjectsOfType<Tile>();
-
- //       foreach (Tile tile in tiles)
- //       {
- //           tile.transition();
- //       }
-	//}
-	
-	//void Update()
- //   {
- //       if (Input.GetButtonDown("HeatWave"))
- //       {
- //           is_hot = !is_hot;
-
- //           foreach (Tile tile in tiles)
- //           {
- //               tile.transition();
- //           }
- //       }
-	//}
-=======
     public bool is_hot = false;
     public HeatWaveObject[] tiles;
     public float heat_wave_speed = 20.0f;
@@ -62,5 +35,5 @@ public class WorldState : MonoBehaviour
             is_hot = true;
         }
 	}
->>>>>>> origin/master
+
 }
