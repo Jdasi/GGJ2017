@@ -32,7 +32,7 @@ public class ButtonScript : MonoBehaviour {
                 GameObject door = GameObject.Find("Door");
 
                 door.transform.position += Vector3.down * 1 * Time.deltaTime;
-
+                
                 timeLeft -= Time.deltaTime;
 
                 if (timeLeft < 0)

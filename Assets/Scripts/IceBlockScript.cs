@@ -14,7 +14,6 @@ public class IceBlockScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (GetComponent<Renderer>().isVisible)
         {
             checkTemp();
