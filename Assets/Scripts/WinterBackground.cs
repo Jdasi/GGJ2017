@@ -18,24 +18,24 @@ public class WinterBackground : MonoBehaviour {
     void Update()
     {
        Color alpha = GetComponent<SpriteRenderer>().color;
-        if (Input.GetKeyDown("q"))
-        {
-            if (alpha.a == 1 || alpha.a < 0)
-            {
-                if (isCold == true)
-                {
-                    isCold = false;
-                }
-                else
-                {
-                    isCold = true;
-                }
-                counter = 0;
-            }
-        }
+        //if (Input.GetKeyDown("q"))
+        //{
+        //    if (alpha.a == 1 || alpha.a < 0)
+        //    {
+        //        if (isCold == true)
+        //        {
+        //            isCold = false;
+        //        }
+        //        else
+        //        {
+        //            isCold = true;
+        //        }
+        //        counter = 0;
+        //    }
+        //}
         switch (isCold)
         {
-            case true:
+            case false:
                 if (alpha.a < 1)
                 {
                     alpha.a += 0.01f; 
@@ -43,7 +43,7 @@ public class WinterBackground : MonoBehaviour {
                // GetComponent<SpriteRenderer>().color = Color.Lerp(Color.blue, Color.red, counter += Time.deltaTime);
                 //.material.Lerp(mat1, mat2, counter += Time.deltaTime);
                 break;
-            case false:
+            case true:
                 if (alpha.a > 0)
                 {
                     alpha.a -= 0.01f;
