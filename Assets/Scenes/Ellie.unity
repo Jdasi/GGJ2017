@@ -4126,6 +4126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_hot: 0
   tiles: []
+  heat_wave_speed: 20
 --- !u!4 &1359446094
 Transform:
   m_ObjectHideFlags: 0
