@@ -35,4 +35,14 @@ public class HeatWaveObject : MonoBehaviour
 
         sprite.sprite = world_state.is_hot ? hot_sprite : cold_sprite;
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "HeatWaveSource")
+        {
+            print("HeatWaveObject collision");
+
+            react();
+        }
+    }
 }
