@@ -17,7 +17,7 @@ public class BlockMoveScript : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        if (GetComponent<OnScreenScript>().checkOnScreen())
+       // if (GetComponent<OnScreenScript>().checkOnScreen())
         {
             checkTemp();
 

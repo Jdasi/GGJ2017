@@ -5,7 +5,7 @@ public class OnScreenScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        checkOnScreen();
+        //checkOnScreen();
 	}
 	
 	// Update is called once per frame
@@ -15,7 +15,7 @@ public class OnScreenScript : MonoBehaviour {
 
     public bool checkOnScreen()
     {
-        if (GetComponent<Renderer>().isVisible)
+        /*if (GetComponent<Renderer>().isVisible)
         {
             return true;
         }
@@ -23,6 +23,7 @@ public class OnScreenScript : MonoBehaviour {
         else
         {
             return false;
-        }
+        }*/
+        return true;
     }
 }

@@ -27,7 +27,7 @@ public class enemyMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (GetComponent<OnScreenScript>().checkOnScreen())
+        //if (GetComponent<OnScreenScript>().checkOnScreen())
         {
             if (moveLeft && checkMove)
             {
