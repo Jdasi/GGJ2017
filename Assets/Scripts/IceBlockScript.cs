@@ -14,7 +14,10 @@ public class IceBlockScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkTemp();
+        if (GetComponent<OnScreenScript>().checkOnScreen())
+        {
+            checkTemp();
+        }
     }
 
     void checkTemp()
