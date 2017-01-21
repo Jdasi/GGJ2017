@@ -5,15 +5,15 @@ public class WorldState : MonoBehaviour
 {
     public bool is_hot = false;
 
-    public Tile[] tiles;
+    public HeatWaveObject[] tiles;
 
 	void Start()
     {
-        tiles = GameObject.FindObjectsOfType<Tile>();
+        tiles = GameObject.FindObjectsOfType<HeatWaveObject>();
 
-        foreach (Tile tile in tiles)
+        foreach (HeatWaveObject tile in tiles)
         {
-            tile.transition();
+            tile.react();
         }
 	}
 	
@@ -23,9 +23,9 @@ public class WorldState : MonoBehaviour
         {
             is_hot = !is_hot;
 
-            foreach (Tile tile in tiles)
+            foreach (HeatWaveObject tile in tiles)
             {
-                tile.transition();
+                tile.react();
             }
         }
 	}

@@ -198,6 +198,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 50842166}
   - 212: {fileID: 50842165}
+  - 50: {fileID: 50842167}
+  - 61: {fileID: 50842168}
   m_Layer: 0
   m_Name: Icicle3
   m_TagString: Untagged
@@ -247,6 +249,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1485155704}
   m_RootOrder: 8
+--- !u!50 &50842167
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 50842164}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &50842168
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 50842164}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.34, y: 2.68}
 --- !u!1 &55862159
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,6 +1527,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 599406392}
   - 212: {fileID: 599406391}
+  - 50: {fileID: 599406393}
+  - 61: {fileID: 599406394}
   m_Layer: 0
   m_Name: Icicle2
   m_TagString: Untagged
@@ -1543,6 +1578,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1485155704}
   m_RootOrder: 3
+--- !u!50 &599406393
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 599406390}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &599406394
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 599406390}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 3.12}
 --- !u!1001 &605578414
 Prefab:
   m_ObjectHideFlags: 0
@@ -2838,6 +2904,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1057498314}
   - 212: {fileID: 1057498313}
+  - 50: {fileID: 1057498315}
+  - 61: {fileID: 1057498316}
   m_Layer: 0
   m_Name: Icicle1
   m_TagString: Untagged
@@ -2887,6 +2955,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1485155704}
   m_RootOrder: 1
+--- !u!50 &1057498315
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1057498312}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1057498316
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1057498312}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.47, y: 3.09}
 --- !u!1001 &1057966029
 Prefab:
   m_ObjectHideFlags: 0
@@ -3416,7 +3515,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 405356, guid: d1ccdb3b2ea1cf44f8045b63252736f5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.21
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 405356, guid: d1ccdb3b2ea1cf44f8045b63252736f5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3440,7 +3539,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 405356, guid: d1ccdb3b2ea1cf44f8045b63252736f5, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 154368, guid: d1ccdb3b2ea1cf44f8045b63252736f5, type: 2}
       propertyPath: m_Name
@@ -3574,6 +3673,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1289662126}
   - 212: {fileID: 1289662125}
+  - 50: {fileID: 1289662127}
+  - 61: {fileID: 1289662128}
   m_Layer: 0
   m_Name: Icicle3
   m_TagString: Untagged
@@ -3623,6 +3724,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1485155704}
   m_RootOrder: 10
+--- !u!50 &1289662127
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1289662124}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1289662128
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1289662124}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.34, y: 2.68}
 --- !u!1001 &1304594731
 Prefab:
   m_ObjectHideFlags: 0
@@ -3958,7 +4090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d5490122a6c344db32dfc64899e2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
+  is_hot: 0
   tiles: []
 --- !u!4 &1359446094
 Transform:
@@ -4003,6 +4135,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1370150873}
   - 212: {fileID: 1370150872}
+  - 50: {fileID: 1370150874}
+  - 61: {fileID: 1370150875}
   m_Layer: 0
   m_Name: Bare Icicles (1)
   m_TagString: Untagged
@@ -4052,6 +4186,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1485155704}
   m_RootOrder: 9
+--- !u!50 &1370150874
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1370150871}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1370150875
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1370150871}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 4, y: 3.3}
 --- !u!1001 &1374996518
 Prefab:
   m_ObjectHideFlags: 0
@@ -4812,7 +4977,7 @@ MonoBehaviour:
   - {fileID: 1370150871}
   - {fileID: 1289662124}
   triggered: 0
-  delay: 2
+  delay: 10
   crushPosition: {x: 0, y: 0}
 --- !u!4 &1485155704
 Transform:
@@ -4940,6 +5105,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1501828391}
   - 212: {fileID: 1501828390}
+  - 50: {fileID: 1501828392}
+  - 61: {fileID: 1501828393}
   m_Layer: 0
   m_Name: Icicle2 (1)
   m_TagString: Untagged
@@ -4989,6 +5156,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1485155704}
   m_RootOrder: 7
+--- !u!50 &1501828392
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1501828389}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1501828393
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1501828389}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 3.12}
 --- !u!1001 &1502036703
 Prefab:
   m_ObjectHideFlags: 0
@@ -5152,6 +5350,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1525562485}
   - 212: {fileID: 1525562484}
+  - 50: {fileID: 1525562486}
+  - 61: {fileID: 1525562487}
   m_Layer: 0
   m_Name: Bare Icicles
   m_TagString: Untagged
@@ -5201,6 +5401,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1485155704}
   m_RootOrder: 4
+--- !u!50 &1525562486
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1525562483}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1525562487
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1525562483}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 4, y: 3.3}
 --- !u!1001 &1594158584
 Prefab:
   m_ObjectHideFlags: 0
@@ -5376,6 +5607,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1620474745}
   - 212: {fileID: 1620474744}
+  - 50: {fileID: 1620474746}
+  - 61: {fileID: 1620474747}
   m_Layer: 0
   m_Name: Icicle1 (1)
   m_TagString: Untagged
@@ -5425,6 +5658,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1485155704}
   m_RootOrder: 6
+--- !u!50 &1620474746
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1620474743}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1620474747
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1620474743}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.47, y: 3.09}
 --- !u!1 &1626771893 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 172320, guid: 40289a599fe8ce442bd8c96e14b63319, type: 2}
@@ -5624,6 +5888,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1736776927}
   - 212: {fileID: 1736776926}
+  - 50: {fileID: 1736776928}
+  - 61: {fileID: 1736776929}
   m_Layer: 0
   m_Name: Icicle4 (1)
   m_TagString: Untagged
@@ -5673,6 +5939,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1485155704}
   m_RootOrder: 5
+--- !u!50 &1736776928
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1736776925}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1736776929
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1736776925}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.35, y: 2.59}
 --- !u!4 &1748821435 stripped
 Transform:
   m_PrefabParentObject: {fileID: 407712, guid: 40289a599fe8ce442bd8c96e14b63319, type: 2}
@@ -6121,6 +6418,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1889840631}
   - 212: {fileID: 1889840630}
+  - 50: {fileID: 1889840632}
+  - 61: {fileID: 1889840633}
   m_Layer: 0
   m_Name: Icicle4
   m_TagString: Untagged
@@ -6170,6 +6469,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1485155704}
   m_RootOrder: 2
+--- !u!50 &1889840632
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1889840629}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1889840633
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1889840629}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.35, y: 2.59}
 --- !u!1001 &1935438432
 Prefab:
   m_ObjectHideFlags: 0
