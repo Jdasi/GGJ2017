@@ -3,43 +3,49 @@ using System.Collections;
 
 public class ButtonPress : MonoBehaviour {
     public bool dropBridge = false;
+    public bool stopRotation = true;
     private float timeLeft = 3;
+    private GameObject bridge;
+    Vector3 rotationEuler;
 	// Use this for initialization
 	void Start () {
-	
+        bridge = GameObject.Find("Drawbridge");
 	}
-	
 
-	// Update is called once per frame
-	void Update () {
+
+    void Update () {
+        //if player on trigger and not fully dropped
+
+        //To convert Quaternion -> Euler, use eulerAngles
+        print(transform.rotation.eulerAngles);
 	    if (dropBridge)
         {
-            GameObject bridge = GameObject.Find("Drawbridge");
-            Debug.Log("bridge found");
-            //bridge.transform.position += Vector3.down * 1 * Time.deltaTime;
-            bridge.transform.Rotate(0, 0, -90 * Time.deltaTime);
-            timeLeft -= Time.deltaTime;
-
-            if (timeLeft < 0)
+            if(bridge.transform.localRotation.z < 90)
             {
-                dropBridge = false;
+                rotationEuler += Vector3.forward * 30 * Time.deltaTime; //increment 30 degrees every second
+                bridge.transform.rotation = Quaternion.Euler(rotationEuler);
+
             }
+            //bridge.transform.Rotate(0, 0, 90);
+            
         }
-	}
-
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.tag == "Player")
+        else if(!dropBridge)
         {
-            Debug.Log("Triggereeeeeeed");
+            //if (bridge.transform.localRotation.z > 90)
+            //    bridge.transform.Rotate(0, 0, 0);
+            
         }
+
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+
+    void OnTriggerStay2D()
     {
-        Debug.Log("#triggered");
         dropBridge = true;
-        transform.position += Vector3.down * 1 * Time.deltaTime;
+    }
+
+    void OnTriggerExit2D()
+    {
+        dropBridge = false;
     }
 }

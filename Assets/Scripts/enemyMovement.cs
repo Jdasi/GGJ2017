@@ -9,6 +9,7 @@ public class enemyMovement : MonoBehaviour {
     public float speed;
     private int moveChance;
     private bool checkMove;
+    private bool triggered;
     //private bool isFrozen;
 
     public Sprite normalSprite;
@@ -24,6 +25,7 @@ public class enemyMovement : MonoBehaviour {
         InvokeRepeating("checkMoveChance", 1.0f, Random.Range(2.0f, 5.0f));
         world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
 
+        setFrozen();
     }
 
     // Update is called once per frame
@@ -37,10 +39,6 @@ public class enemyMovement : MonoBehaviour {
             {
                 transform.position += Vector3.right * speed * Time.deltaTime;
             }
-
-
-            setFrozen();
-            
 	}
 
     void OnTriggerEnter2D(Collider2D coll)
@@ -48,6 +46,10 @@ public class enemyMovement : MonoBehaviour {
         if(coll.gameObject.tag == "Tile")
         {
             moveLeft = !moveLeft;
+        }
+        if (coll.tag == "HeatWaveSource")
+        {
+            setFrozen();
         }
     }
 
