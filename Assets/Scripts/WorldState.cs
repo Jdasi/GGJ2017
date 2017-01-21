@@ -3,37 +3,30 @@ using System.Collections;
 
 public class WorldState : MonoBehaviour
 {
-
     public bool is_hot = false;
-    public HeatWaveObject[] tiles;
-    public float heat_wave_speed = 20.0f;
 
-    private bool expanding = false;
-    private CircleCollider2D circle_collider;
+    public HeatWaveObject[] tiles;
 
 	void Start()
     {
         tiles = GameObject.FindObjectsOfType<HeatWaveObject>();
-        circle_collider = GetComponent<CircleCollider2D>();
 
-        foreach (HeatWaveObject obj in tiles)
+        foreach (HeatWaveObject tile in tiles)
         {
-            obj.react();
+            tile.react();
         }
 	}
 	
 	void Update()
     {
-        if (expanding)
-        {
-            circle_collider.radius += heat_wave_speed * Time.deltaTime;
-        }
-
         if (Input.GetButtonDown("HeatWave"))
         {
-            expanding = true;
-            is_hot = true;
+            is_hot = !is_hot;
+
+            foreach (HeatWaveObject tile in tiles)
+            {
+                tile.react();
+            }
         }
 	}
-
 }
