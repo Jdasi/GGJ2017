@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21261662}
   - 61: {fileID: 6136242}
   - 50: {fileID: 5018808}
+  - 114: {fileID: 11421254}
   m_Layer: 0
   m_Name: Crate
   m_TagString: Untagged
@@ -61,6 +62,21 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 2.25, y: 2.25}
+--- !u!114 &11421254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc3a596cd84bac4db9bffdbf2bd1ba2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cold_sprite: {fileID: 21300000, guid: 54a59ac605af644479a9a158d3058ddf, type: 3}
+  hot_sprite: {fileID: 21300000, guid: 666eb5607eb4cec4f9b4fbd1fdeceee6, type: 3}
+  visible_in_cold: 1
+  visible_in_hot: 1
 --- !u!212 &21261662
 SpriteRenderer:
   m_ObjectHideFlags: 1
