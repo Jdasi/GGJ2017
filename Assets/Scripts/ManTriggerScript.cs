@@ -20,6 +20,7 @@ public class ManTriggerScript : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             man.GetComponentInParent<ManScript>().playHelp();
+            Destroy(gameObject);
         }
     }
 }
