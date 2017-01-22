@@ -22,6 +22,14 @@ public class MovingPlatformScript : MonoBehaviour {
         {
             movePlatform();
         }
+
+        if (GetComponent<Renderer>().isVisible)
+        {
+            if (world_state.is_hot)
+            {
+                checkTemp();
+            }
+        }
     }
 
     void OnCollisionEnter2D(Collision2D coll)

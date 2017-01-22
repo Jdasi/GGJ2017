@@ -39,7 +39,14 @@ public class IceBlockScript : MonoBehaviour
         if (isFrozen != true)
         {
             Color tmp = GetComponent<SpriteRenderer>().color;
-            tmp.a = 0.1f;
+            tmp.a = 0f;
+            GetComponent<SpriteRenderer>().color = tmp;
+        }
+
+        else
+        {
+            Color tmp = GetComponent<SpriteRenderer>().color;
+            tmp.a = 1f;
             GetComponent<SpriteRenderer>().color = tmp;
         }
     }
