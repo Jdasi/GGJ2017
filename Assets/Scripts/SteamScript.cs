@@ -10,6 +10,8 @@ public class SteamScript : MonoBehaviour {
     void Start ()
     {
         world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
+
+        world_state.kinda_heatwave_objects.Add(gameObject);
     }
 
     // Update is called once per frame
@@ -55,5 +57,10 @@ public class SteamScript : MonoBehaviour {
         {
             checkCold();
         }
+    }
+
+    public void react()
+    {
+        checkCold();
     }
 }

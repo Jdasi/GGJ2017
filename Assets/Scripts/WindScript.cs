@@ -11,11 +11,13 @@ public class WindScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
+
+        world_state.kinda_heatwave_objects.Add(gameObject);
     }
 	
 	// Update is called once per frame
 	void Update () {
-        checkCold();
+        //checkCold();
 	}
 
     void OnTriggerStay2D(Collider2D coll)
@@ -29,6 +31,11 @@ public class WindScript : MonoBehaviour {
                 //play wind sound 
             }
         }
+    }
+
+    public void react()
+    {
+        checkCold();
     }
 
     void checkCold()

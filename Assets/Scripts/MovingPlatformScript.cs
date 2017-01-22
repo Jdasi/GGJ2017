@@ -13,6 +13,8 @@ public class MovingPlatformScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
+
+        world_state.kinda_heatwave_objects.Add(gameObject);
     }
 	
 	// Update is called once per frame
@@ -21,14 +23,6 @@ public class MovingPlatformScript : MonoBehaviour {
         if (isFrozen != true)
         {
             movePlatform();
-        }
-
-        if (GetComponent<Renderer>().isVisible)
-        {
-            if (world_state.is_hot)
-            {
-                checkTemp();
-            }
         }
     }
 
@@ -99,5 +93,10 @@ public class MovingPlatformScript : MonoBehaviour {
         {
             checkTemp();
         }
+    }
+
+    public void react()
+    {
+        checkTemp();
     }
 }
