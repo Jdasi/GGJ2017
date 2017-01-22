@@ -8,10 +8,13 @@ public class ButtonScript : MonoBehaviour {
     float timeLeft = 4;
     private AudioSource audio_source;
     public AudioClip open;
+
+    private SpriteRenderer instruction;
+
     void Start()
     {
         audio_source = GetComponent<AudioSource>();
-
+        instruction = GameObject.Find("XtoInteract").GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -19,11 +22,10 @@ public class ButtonScript : MonoBehaviour {
     {
         if (GetComponent<Renderer>().isVisible)
         {
-            if (Input.GetButtonDown("Interact"));
+            if (Input.GetButtonDown("Interact"))
             {
                 moveDoor = true;
                 audio_source.PlayOneShot(open);
-                //play click sound
             }
 
             if (moveDoor)
@@ -40,5 +42,21 @@ public class ButtonScript : MonoBehaviour {
                 }
             }
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag != "Player")
+            return;
+
+        instruction.enabled = true;
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag != "Player")
+            return;
+
+        instruction.enabled = false;
     }
 }
