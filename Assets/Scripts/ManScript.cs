@@ -29,7 +29,7 @@ public class ManScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isFrozen == false)
+        if (world_state.is_hot)
         {
             checkHeight();
         }
@@ -45,21 +45,13 @@ public class ManScript : MonoBehaviour
         }
     }
 
-    void checkTemp()
+    void enableGrav()
     {
         if (!world_state.is_hot)
         {
-            isFrozen = true;
+            return;
         }
 
-        else if (world_state.is_hot)
-        {
-            isFrozen = false;
-        }
-    }
-
-    void enableGrav()
-    {
         GameObject ice = GameObject.Find("Man Ice");
 
         Destroy(ice);
@@ -68,7 +60,7 @@ public class ManScript : MonoBehaviour
         tmp.a = 1f;
         GetComponent<SpriteRenderer>().color = tmp;
 
-       // GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
 
     }
 
