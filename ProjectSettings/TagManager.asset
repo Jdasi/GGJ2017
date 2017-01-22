@@ -12,7 +12,8 @@ TagManager:
   - Tile
   - Icicle
   - HeatWaveSource
-  - Hazard
+  - HazardHot
+  - HazardCold
   layers:
   - Default
   - TransparentFX
