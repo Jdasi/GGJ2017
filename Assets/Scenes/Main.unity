@@ -999,7 +999,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 176744, guid: 0a1741e5e41082d4bb3ff761b28062d0, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a1741e5e41082d4bb3ff761b28062d0, type: 2}
@@ -10935,8 +10935,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 599207740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 76.51, y: -14.96, z: 0}
-  m_LocalScale: {x: 0.45985413, y: 0.45985413, z: 0.45985413}
+  m_LocalPosition: {x: 76.51, y: -15.64, z: 0}
+  m_LocalScale: {x: 1.2008716, y: 1.2008711, z: 1.2008711}
   m_Children: []
   m_Father: {fileID: 1561851713}
   m_RootOrder: 51
@@ -10966,7 +10966,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a4ab78a37e76a704ea8e137648e1dada, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c74fa0c2c6732414abad1661624ea00e, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12378,7 +12378,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 438414, guid: 995af3889ffb595439c483db96dcdbf2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 50.96
+      value: 51.044
       objectReference: {fileID: 0}
     - target: {fileID: 438414, guid: 995af3889ffb595439c483db96dcdbf2, type: 2}
       propertyPath: m_LocalPosition.y
@@ -12407,10 +12407,6 @@ Prefab:
     - target: {fileID: 438414, guid: 995af3889ffb595439c483db96dcdbf2, type: 2}
       propertyPath: m_RootOrder
       value: 33
-      objectReference: {fileID: 0}
-    - target: {fileID: 196854, guid: 995af3889ffb595439c483db96dcdbf2, type: 2}
-      propertyPath: m_TagString
-      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 995af3889ffb595439c483db96dcdbf2, type: 2}
@@ -24448,22 +24444,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 11411160, guid: 3875f5884cfd03f4a923a2cb3e58d5ad, type: 2}
-      propertyPath: maxDistanceLeft
-      value: 55
-      objectReference: {fileID: 0}
-    - target: {fileID: 11411160, guid: 3875f5884cfd03f4a923a2cb3e58d5ad, type: 2}
-      propertyPath: maxDistanceRight
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 181772, guid: 3875f5884cfd03f4a923a2cb3e58d5ad, type: 2}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 181772, guid: 3875f5884cfd03f4a923a2cb3e58d5ad, type: 2}
-      propertyPath: m_TagString
-      value: Tile
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3875f5884cfd03f4a923a2cb3e58d5ad, type: 2}
   m_IsPrefabParent: 0
@@ -31493,7 +31473,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 484814, guid: 9c606eee92e95ba4dbcc47d51cef9f4e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -16.89339
+      value: -16.92
       objectReference: {fileID: 0}
     - target: {fileID: 484814, guid: 9c606eee92e95ba4dbcc47d51cef9f4e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -38768,8 +38748,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2132804350}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 83.45, y: -14.19, z: 0}
-  m_LocalScale: {x: 0.5845032, y: 4.0802946, z: 1}
+  m_LocalPosition: {x: 83.23, y: -14.21, z: 0}
+  m_LocalScale: {x: 0.5845032, y: 1.4459461, z: 1}
   m_Children: []
   m_Father: {fileID: 1561851713}
   m_RootOrder: 50
@@ -38799,8 +38779,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a4ab78a37e76a704ea8e137648e1dada, type: 3}
-  m_Color: {r: 0.3897059, g: 0.17580241, b: 0.011461949, a: 1}
+  m_Sprite: {fileID: 21300000, guid: acf0d0de7757c9e418d7e227a06b78e7, type: 3}
+  m_Color: {r: 0.43382353, g: 0.42299995, b: 0.41468427, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!61 &2132804353
