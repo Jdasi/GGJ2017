@@ -224,6 +224,10 @@ Prefab:
       propertyPath: m_Name
       value: WorldBlock (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 11465870, guid: 15aa2143c857c524fb247830df9ccb95, type: 2}
+      propertyPath: visible_in_hot
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15aa2143c857c524fb247830df9ccb95, type: 2}
   m_IsPrefabParent: 0
@@ -3215,6 +3219,10 @@ Prefab:
     - target: {fileID: 199858, guid: 15aa2143c857c524fb247830df9ccb95, type: 2}
       propertyPath: m_Name
       value: WorldBlock (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11465870, guid: 15aa2143c857c524fb247830df9ccb95, type: 2}
+      propertyPath: visible_in_hot
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15aa2143c857c524fb247830df9ccb95, type: 2}

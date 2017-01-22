@@ -5,7 +5,8 @@ using System.Collections.Generic;
 public class WorldState : MonoBehaviour
 {
     public bool is_hot = false;
-    public List<HeatWaveObject> heatwave_objects;
+    public HeatWaveObject[] heatwave_objects;
+    public List<GameObject> kinda_heatwave_objects;
     public float expand_duration = 1f;
 
     private float max_heatwave_radius = 100f;
@@ -20,18 +21,14 @@ public class WorldState : MonoBehaviour
 
     void Start()
     {
-        HeatWaveObject[] temp = GameObject.FindObjectsOfType<HeatWaveObject>();
-        foreach (HeatWaveObject obj in temp)
-        {
-            heatwave_objects.Add(obj);
-        }
+        heatwave_objects = GameObject.FindObjectsOfType<HeatWaveObject>();
 
         circle_collider = GetComponent<CircleCollider2D>();
         heatwave_sprite = GameObject.Find("HeatWaveSprite").GetComponent<SpriteRenderer>();
 
         heatwave_cooldown = expand_duration;
 
-        react_all();
+        Invoke("react_all", 0.1f);
     }
     
     void Update()
@@ -78,6 +75,11 @@ public class WorldState : MonoBehaviour
         foreach (HeatWaveObject obj in heatwave_objects)
         {
             obj.react();
+        }
+
+        foreach (GameObject obj in kinda_heatwave_objects)
+        {
+            obj.SendMessage("react");
         }
     }
 }

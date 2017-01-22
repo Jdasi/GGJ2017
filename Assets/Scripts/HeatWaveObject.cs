@@ -10,7 +10,8 @@ public class HeatWaveObject : MonoBehaviour
     public bool visible_in_cold = true;
     public bool visible_in_hot = true;
 
-    private WorldState world_state;
+    public WorldState world_state;
+
     private SpriteRenderer sprite;
     private BoxCollider2D box_collider;
 
