@@ -5,12 +5,14 @@ public class SteamScript : MonoBehaviour {
 
     //bool cold = true;
     private WorldState world_state;
+    private AudioSource audio_source;
+    public AudioClip steam;
 
     // Use this for initialization
     void Start ()
     {
         world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
-
+        audio_source = GetComponent<AudioSource>();
         world_state.kinda_heatwave_objects.Add(gameObject);
     }
 
@@ -22,6 +24,7 @@ public class SteamScript : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D coll)
     {
+        audio_source.PlayOneShot(steam);
         if (world_state.is_hot)
         {
             if (coll.tag == "Player")

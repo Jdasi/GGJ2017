@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hotHazard: 1
+  death: {fileID: 8300000, guid: e08f0612afe98c7448671bc414ca222a, type: 3}
 --- !u!212 &21243650
 SpriteRenderer:
   m_ObjectHideFlags: 1

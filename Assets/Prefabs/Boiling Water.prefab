@@ -14,6 +14,7 @@ GameObject:
   - 61: {fileID: 6196440}
   - 114: {fileID: 11498500}
   - 50: {fileID: 5045144}
+  - 82: {fileID: 8227182}
   m_Layer: 8
   m_Name: Boiling Water
   m_TagString: Untagged
@@ -57,8 +58,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 173808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.46, y: 0.2, z: -1}
-  m_LocalScale: {x: 7.9033237, y: 0.58749956, z: 1}
+  m_LocalPosition: {x: 16.250034, y: -16.89339, z: 0.64}
+  m_LocalScale: {x: 6.7960405, y: 0.58749956, z: 1}
   m_Children:
   - {fileID: 472218}
   m_Father: {fileID: 0}
@@ -138,9 +139,83 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -0.028252846, y: 1.7122388}
+  m_Offset: {x: -0.028253064, y: 4.191688}
   serializedVersion: 2
-  m_Size: {x: 0.9435079, y: 4.4244366}
+  m_Size: {x: 0.94350773, y: 9.383321}
+--- !u!82 &8227182
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173808}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c7a27109c09a04a4da5bec47f1c2c240, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &11498500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,6 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 210977ca83aa0d84fa6e0c0667c6b4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steam: {fileID: 0}
 --- !u!198 &19801040
 ParticleSystem:
   m_ObjectHideFlags: 1

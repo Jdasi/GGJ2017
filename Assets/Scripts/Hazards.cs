@@ -8,14 +8,13 @@ public class Hazards : MonoBehaviour
     public bool hotHazard = false;
 
     private AudioSource audio_source;
-    public AudioClip icicle_Death;
-    public AudioClip heat_Death;
+    public AudioClip death;
 
     private PlayerLives player_lives;
 
     void Start()
     {
-        audio_source = GameObject.Find("Player").GetComponent<AudioSource>();
+        audio_source = GameObject.Find("AudioManager").GetComponent<AudioSource>();
         world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
         player_lives = GameObject.Find("Player").GetComponent<PlayerLives>();
     }
@@ -33,9 +32,9 @@ public class Hazards : MonoBehaviour
             {
                 if (hotHazard)
                 {
+                    audio_source.PlayOneShot(death);
                     player_lives.gameObject.GetComponent<BoxCollider2D>().enabled = false;
                     player_lives.gameObject.GetComponent<CircleCollider2D>().enabled = false;
-
                     player_lives.remove_life();
                 }
             }
@@ -43,9 +42,9 @@ public class Hazards : MonoBehaviour
             {
                 if (!hotHazard)
                 {
+                    audio_source.PlayOneShot(death);
                     player_lives.gameObject.GetComponent<BoxCollider2D>().enabled = false;
                     player_lives.gameObject.GetComponent<CircleCollider2D>().enabled = false;
-
                     player_lives.remove_life();
                 }
             }
