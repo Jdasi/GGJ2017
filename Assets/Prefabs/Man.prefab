@@ -206,6 +206,7 @@ MonoBehaviour:
   alive: {fileID: 21300000, guid: ccf70264eb660a4438a727272983b55f, type: 3}
   dead: {fileID: 21300000, guid: 4dc9b601b5c1849479c1d73f28197da5, type: 3}
   deathHeight: 1
+  death_sound: {fileID: 8300000, guid: e08f0612afe98c7448671bc414ca222a, type: 3}
 --- !u!212 &21200214
 SpriteRenderer:
   m_ObjectHideFlags: 1
