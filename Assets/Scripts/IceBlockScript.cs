@@ -59,6 +59,11 @@ public class IceBlockScript : MonoBehaviour
         {
             GetComponent<BoxCollider2D>().isTrigger = true;
         }
+
+        else
+        {
+            GetComponent<BoxCollider2D>().isTrigger = false;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)

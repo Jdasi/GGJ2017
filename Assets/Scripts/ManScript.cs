@@ -17,6 +17,8 @@ public class ManScript : MonoBehaviour
     {
         world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
 
+        world_state.kinda_heatwave_objects.Add(gameObject);
+
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY;
 
         Color tmp = GetComponent<SpriteRenderer>().color;
@@ -27,12 +29,6 @@ public class ManScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (GetComponent<Renderer>().isVisible)
-        {
-            checkTemp();
-        }
-
         if (isFrozen == false)
         {
             checkHeight();
@@ -51,14 +47,12 @@ public class ManScript : MonoBehaviour
 
     void checkTemp()
     {
-        GameObject state = GameObject.Find("Wind particle effect");
-
         if (!world_state.is_hot)
         {
             isFrozen = true;
         }
 
-        else
+        else if (world_state.is_hot)
         {
             isFrozen = false;
         }
@@ -74,7 +68,7 @@ public class ManScript : MonoBehaviour
         tmp.a = 1f;
         GetComponent<SpriteRenderer>().color = tmp;
 
-        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+       // GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
 
     }
 
@@ -94,5 +88,10 @@ public class ManScript : MonoBehaviour
         {
             enableGrav();
         }
+    }
+
+    public void react()
+    {
+        enableGrav();
     }
 }

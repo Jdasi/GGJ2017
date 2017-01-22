@@ -17,7 +17,7 @@ public class WindScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //checkCold();
+
 	}
 
     void OnTriggerStay2D(Collider2D coll)
@@ -38,6 +38,14 @@ public class WindScript : MonoBehaviour {
         checkCold();
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "HeatWaveSource")
+        {
+            checkCold();
+        }
+    }
+
     void checkCold()
     {
         GameObject wind  = GameObject.Find("Wind particle effect");
@@ -45,7 +53,7 @@ public class WindScript : MonoBehaviour {
         if (!world_state.is_hot)
         {
             cold = true;
-            wind.GetComponent<ParticleSystem>().enableEmission = true;
+            wind.GetComponent<ParticleSystem>().enableEmission = true;         
         }
 
         else
