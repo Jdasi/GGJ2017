@@ -6,15 +6,19 @@ public class MainMenu : MonoBehaviour {
 
     private Animator animation;
     private bool instructionsOpen = false;
-
+    private AudioSource audio_source;
+    public AudioClip click;
 
     void Start()
     {
         animation = GetComponent<Animator>();
+        audio_source = GetComponent<AudioSource>();
     }
 
     public void StartGame()
     {
+        audio_source.PlayOneShot(click);
+
         if(!instructionsOpen)
         {
             Application.LoadLevel("Main");
@@ -25,6 +29,8 @@ public class MainMenu : MonoBehaviour {
 
     public void QuitGame()
     {
+        audio_source.PlayOneShot(click);
+
         if (!instructionsOpen)
         {
             Application.Quit();
@@ -34,6 +40,8 @@ public class MainMenu : MonoBehaviour {
 
     public void toggleInstructions()
     {
+        audio_source.PlayOneShot(click);
+
         instructionsOpen = !instructionsOpen;
 
 
