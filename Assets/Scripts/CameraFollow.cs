@@ -14,7 +14,7 @@ public class CameraFollow : MonoBehaviour
     {
         Vector3 temp = target.transform.position;
         temp.z = -10;
-        //temp.y = 4;
+        temp.y += 2;
         //if (target.transform.position.y >= 0.8)
         //{
        // temp.y += target.transform.position.y;
