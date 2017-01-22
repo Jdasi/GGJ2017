@@ -24,6 +24,7 @@ public class enemyMovement : MonoBehaviour {
         speed = 3;   
         InvokeRepeating("checkMoveChance", 1.0f, Random.Range(2.0f, 5.0f));
         world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
+        world_state.kinda_heatwave_objects.Add(gameObject);
         setFrozen();
     }
 
@@ -85,4 +86,8 @@ public class enemyMovement : MonoBehaviour {
 
     }
 
+    public void react()
+    {
+        setFrozen();
+    }
 }
