@@ -81,7 +81,7 @@ public class MovingPlatformScript : MonoBehaviour {
             changeDirection();
         }
 
-        else if (transform.position.x > maxDistanceLeft)
+        else if (transform.position.x < maxDistanceLeft)
         {
             changeDirection();
         }
