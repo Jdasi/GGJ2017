@@ -17,7 +17,7 @@ public class JumpCheck : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Tile")
+        if (other.gameObject.tag == "Tile" || other.gameObject.tag == "Enemy")
         {
             SpriteRenderer sprite = other.gameObject.GetComponent<SpriteRenderer>();
 
