@@ -6,11 +6,13 @@ public class ButtonScript : MonoBehaviour {
     bool moveDoor = false;
 
     float timeLeft = 4;
+    private AudioSource audio_source;
+    public AudioClip open;
+    void Start()
+    {
+        audio_source = GetComponent<AudioSource>();
 
-	// Use this for initialization
-	void Start () {
-	
-	}
+    }
 
     // Update is called once per frame
     void Update()
@@ -20,6 +22,7 @@ public class ButtonScript : MonoBehaviour {
             if (Input.GetButtonDown("Interact"));
             {
                 moveDoor = true;
+                audio_source.PlayOneShot(open);
                 //play click sound
             }
 

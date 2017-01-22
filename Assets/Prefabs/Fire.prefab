@@ -12,8 +12,8 @@ GameObject:
   - 95: {fileID: 9520644}
   - 50: {fileID: 5077708}
   - 61: {fileID: 6109274}
-  - 114: {fileID: 11438738}
   - 114: {fileID: 11446176}
+  - 114: {fileID: 11431826}
   m_Layer: 11
   m_Name: Fire
   m_TagString: Untagged
@@ -28,8 +28,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.03, y: 1.28, z: -1}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalPosition: {x: 76.61, y: -15.82, z: -1}
+  m_LocalScale: {x: 3.9468415, y: 1.8042709, z: 1.2028472}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -81,7 +81,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11438738
+--- !u!114 &11431826
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
