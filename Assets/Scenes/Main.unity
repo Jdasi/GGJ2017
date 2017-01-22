@@ -16609,11 +16609,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 465574, guid: c31cf9ca5be79fb418abb999ebe873ca, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 120.58
+      value: -3.27
       objectReference: {fileID: 0}
     - target: {fileID: 465574, guid: c31cf9ca5be79fb418abb999ebe873ca, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -10.4
+      value: 1.32
       objectReference: {fileID: 0}
     - target: {fileID: 465574, guid: c31cf9ca5be79fb418abb999ebe873ca, type: 2}
       propertyPath: m_LocalPosition.z
