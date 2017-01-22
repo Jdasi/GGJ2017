@@ -9,12 +9,16 @@ public class WorldState : MonoBehaviour
     public List<GameObject> kinda_heatwave_objects;
     public float expand_duration = 1f;
 
+    public AudioClip cold_wave;
+    public AudioClip heat_wave;
+
     private float max_heatwave_radius = 100f;
     private float heatwave_cooldown;
 
     private bool expanding = false;
     private CircleCollider2D circle_collider;
     private SpriteRenderer heatwave_sprite;
+    private AudioSource audio_source;
 
     private float timer = 0f;
     private float size_counter = 0f;
@@ -22,9 +26,9 @@ public class WorldState : MonoBehaviour
     void Start()
     {
         heatwave_objects = GameObject.FindObjectsOfType<HeatWaveObject>();
-
         circle_collider = GetComponent<CircleCollider2D>();
         heatwave_sprite = GameObject.Find("HeatWaveSprite").GetComponent<SpriteRenderer>();
+        audio_source = transform.parent.gameObject.GetComponentInChildren<AudioSource>();
 
         heatwave_cooldown = expand_duration;
 
@@ -60,6 +64,9 @@ public class WorldState : MonoBehaviour
         {
             expanding = true;
             is_hot = !is_hot;
+
+            audio_source.clip = is_hot ? heat_wave : cold_wave;
+            audio_source.Play();
 
             timer = heatwave_cooldown;
             size_counter = 0f;

@@ -14,9 +14,12 @@ public class PlayerMovement : MonoBehaviour
     public bool on_ladder = false;
     public bool on_ice = false;
 
+    public AudioClip jump_sound;
+
     private BoxCollider2D box_collider;
     private Rigidbody2D rigid_body;
     private JumpCheck jump_check;
+    private AudioSource audio_source;
 
     private float climb_velocity = 0f;
     private float gravity_store = 0f;
@@ -27,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         box_collider = GetComponent<BoxCollider2D>();
 	    rigid_body = GetComponent<Rigidbody2D>();
         jump_check = GetComponentInChildren<JumpCheck>();
+        audio_source = GetComponentInChildren<AudioSource>();
 
         gravity_store = rigid_body.gravityScale;
         drag_store = drag_speed;
@@ -98,6 +102,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && jump_check.can_jump)
         {
+            audio_source.PlayOneShot(jump_sound);
             rigid_body.AddForce(new Vector2(0, jump_force));
         }
     }
