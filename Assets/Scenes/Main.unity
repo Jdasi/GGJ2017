@@ -825,6 +825,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hotHazard: 0
+  audio_source: {fileID: 0}
+  click: {fileID: 0}
 --- !u!212 &32073818
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2960,6 +2962,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hotHazard: 0
+  audio_source: {fileID: 0}
+  click: {fileID: 0}
 --- !u!212 &151987576
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3808,6 +3812,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hotHazard: 0
+  audio_source: {fileID: 0}
+  click: {fileID: 0}
 --- !u!212 &219885068
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10138,6 +10144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hotHazard: 0
+  audio_source: {fileID: 0}
+  click: {fileID: 0}
 --- !u!212 &561020901
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10448,6 +10456,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hotHazard: 0
+  audio_source: {fileID: 0}
+  click: {fileID: 0}
 --- !u!212 &580390044
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10562,6 +10572,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hotHazard: 0
+  audio_source: {fileID: 0}
+  click: {fileID: 0}
 --- !u!61 &580714731
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14594,8 +14606,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6193692, guid: c31cf9ca5be79fb418abb999ebe873ca, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c31cf9ca5be79fb418abb999ebe873ca, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &800644900
@@ -18396,6 +18407,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hotHazard: 0
+  audio_source: {fileID: 0}
+  click: {fileID: 0}
 --- !u!61 &1025690339
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18594,6 +18607,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hotHazard: 0
+  audio_source: {fileID: 0}
+  click: {fileID: 0}
 --- !u!61 &1035740317
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20410,24 +20425,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15aa2143c857c524fb247830df9ccb95, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1140145020 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 114790, guid: c31cf9ca5be79fb418abb999ebe873ca, type: 2}
-  m_PrefabInternal: {fileID: 798020614}
---- !u!61 &1140145021
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1140145020}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: -0.030868053, y: -0.23437668}
-  serializedVersion: 2
-  m_Size: {x: 4.120274, y: 8.907595}
 --- !u!1001 &1140725967
 Prefab:
   m_ObjectHideFlags: 0
@@ -24299,6 +24296,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hotHazard: 0
+  audio_source: {fileID: 0}
+  click: {fileID: 0}
 --- !u!61 &1381004353
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33164,6 +33163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hotHazard: 0
+  audio_source: {fileID: 0}
+  click: {fileID: 0}
 --- !u!212 &1796280398
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34056,6 +34057,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hotHazard: 0
+  audio_source: {fileID: 0}
+  click: {fileID: 0}
 --- !u!61 &1860426711
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35733,6 +35736,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hotHazard: 0
+  audio_source: {fileID: 0}
+  click: {fileID: 0}
 --- !u!61 &1968627164
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35987,6 +35992,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hotHazard: 0
+  audio_source: {fileID: 0}
+  click: {fileID: 0}
 --- !u!212 &1976532023
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38557,6 +38564,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hotHazard: 0
+  audio_source: {fileID: 0}
+  click: {fileID: 0}
 --- !u!61 &2128175301
 BoxCollider2D:
   m_ObjectHideFlags: 0

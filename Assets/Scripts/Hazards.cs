@@ -7,13 +7,15 @@ public class Hazards : MonoBehaviour
 
     public bool hotHazard = false;
 
-    public AudioSource audio_source;
-    public AudioClip click;
+    private AudioSource audio_source;
+    public AudioClip icicle_Death;
+    public AudioClip heat_Death;
 
     private PlayerLives player_lives;
 
     void Start()
     {
+        audio_source = GameObject.Find("Player").GetComponent<AudioSource>();
         world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
         player_lives = GameObject.Find("Player").GetComponent<PlayerLives>();
     }
