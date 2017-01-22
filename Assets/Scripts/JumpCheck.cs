@@ -31,7 +31,7 @@ public class JumpCheck : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Tile")
+        if (other.gameObject.tag == "Tile" || other.gameObject.tag == "Enemy")
             can_jump = false;
     }
 }
