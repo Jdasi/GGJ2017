@@ -11,6 +11,7 @@ public class ManScript : MonoBehaviour
     float timeLeft = 0.2f;
     bool isDead = false;
     private WorldState world_state;
+    private AudioSource audio_source;
 
     // Use this for initialization
     void Start()
@@ -24,6 +25,8 @@ public class ManScript : MonoBehaviour
         Color tmp = GetComponent<SpriteRenderer>().color;
         tmp.a = 0.5f;
         GetComponent<SpriteRenderer>().color = tmp;
+
+        audio_source = GetComponentInChildren<AudioSource>();
     }
 
     // Update is called once per frame
@@ -88,5 +91,10 @@ public class ManScript : MonoBehaviour
     public void react()
     {
         enableGrav();
+    }
+
+    public void playHelp()
+    {
+        audio_source.Play();
     }
 }
