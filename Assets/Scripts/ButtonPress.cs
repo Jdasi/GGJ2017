@@ -45,30 +45,6 @@ public class ButtonPress : MonoBehaviour {
                 platform.transform.position += Vector3.down * -1 * Time.deltaTime;
             }
         }
-
-        //if player on trigger and not fully dropped
-        //print(transform.rotation.eulerAngles);
-        /* if (dropBridge)
-         {
-             if (currentTime <= 3)
-             {
-                 currentTime += Time.deltaTime;
-
-                 rotationEuler -= Vector3.forward * 30 * Time.deltaTime; //increment 30 degrees every second
-                 bridge.transform.rotation = Quaternion.Euler(rotationEuler);
-                 Debug.Log(currentTime);
-             }
-         }
-         else if (!dropBridge && entered)
-         {
-             if (currentTime <= 3)
-             {
-                 Debug.Log(currentTime);
-                 currentTime += Time.deltaTime;
-                 rotationEuler += Vector3.forward * 31 * Time.deltaTime; //increment 30 degrees every second
-                 bridge.transform.rotation = Quaternion.Euler(rotationEuler);
-             }
-         }*/
     }
 
     void OnTriggerEnter2D()

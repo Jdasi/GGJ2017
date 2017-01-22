@@ -5,7 +5,7 @@ public class ButtonScript : MonoBehaviour {
 
     bool moveDoor = false;
 
-    float timeLeft = 3;
+    float timeLeft = 4;
 
 	// Use this for initialization
 	void Start () {
@@ -15,13 +15,9 @@ public class ButtonScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
-        //if player is nearby
-        //if player presses gamepad interact key
-
         if (GetComponent<Renderer>().isVisible)
         {
-            if (Input.GetKeyDown(KeyCode.K))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 moveDoor = true;
                 //play click sound
