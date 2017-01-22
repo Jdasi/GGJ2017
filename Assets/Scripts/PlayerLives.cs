@@ -33,6 +33,8 @@ public class PlayerLives : MonoBehaviour
 
             GetComponent<BoxCollider2D>().enabled = true;
             GetComponent<CircleCollider2D>().enabled = true;
+
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
         else
         {
