@@ -18,13 +18,18 @@ public class ButtonPress : MonoBehaviour {
     bool moveDirection = true;
     bool move = false;
 
-	void Start () {
+    private GameObject player;
+
+	void Start ()
+    {
         platform = GameObject.Find("Platform");
         audio_source = GetComponent<AudioSource>();
 
         initialPosition = transform.position;
         downPosition = transform.position;
         downPosition.y -= 0.05f;
+
+        player = GameObject.Find("Player");
 	}
 
 
@@ -60,9 +65,14 @@ public class ButtonPress : MonoBehaviour {
         }
     }
 
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        audio_source.PlayOneShot(click);
+        if (other.gameObject.tag == "HeatWaveSource")
+            return;
+
+        if (Vector3.Distance(transform.position, player.transform.position) < 10f)
+            audio_source.PlayOneShot(click);
+
         transform.position = downPosition;
     }
     void OnTriggerStay2D()
