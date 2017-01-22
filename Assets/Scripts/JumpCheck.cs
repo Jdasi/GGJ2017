@@ -19,8 +19,13 @@ public class JumpCheck : MonoBehaviour
     {
         if (other.gameObject.tag == "Tile")
         {
-            if (other.gameObject.GetComponent<SpriteRenderer>().enabled)
-                can_jump = true;
+            SpriteRenderer sprite = other.gameObject.GetComponent<SpriteRenderer>();
+
+            if (sprite)
+            {
+                if (sprite.enabled)
+                    can_jump = true;
+            }
         }
     }
 
