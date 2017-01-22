@@ -42,6 +42,7 @@ public class ManScript : MonoBehaviour
         if (timeLeft < 0)
         {
             Destroy(gameObject);
+            world_state.kinda_heatwave_objects.Remove(gameObject);
         }
     }
 
