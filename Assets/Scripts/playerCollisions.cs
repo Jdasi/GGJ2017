@@ -3,7 +3,7 @@ using System.Collections;
 
 public class playerCollisions : MonoBehaviour {
     public bool playerIsAlive = true;
-    public Collider2D hitBox;
+    //public Collider2D hitBox;
     private WorldState world_state; 
 	// Use this for initialization
 	void Start () {

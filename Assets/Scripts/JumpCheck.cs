@@ -17,7 +17,7 @@ public class JumpCheck : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Tile" || other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Tile" || other.gameObject.tag == "Enemy" || other.gameObject.tag == "Hazard")
         {
             SpriteRenderer sprite = other.gameObject.GetComponent<SpriteRenderer>();
 
@@ -31,7 +31,7 @@ public class JumpCheck : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Tile" || other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Tile" || other.gameObject.tag == "Enemy" || other.gameObject.tag == "Hazard")
             can_jump = false;
     }
 }
