@@ -28,7 +28,7 @@ public class MovingPlatformScript : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        changeDirection();
+        
     }
 
     void changeDirection()

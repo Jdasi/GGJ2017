@@ -72,6 +72,8 @@ public class ManScript : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = dead;
 
             isDead = true;
+
+            transform.localScale *= 1.2f;
         }
     }
 
