@@ -4,19 +4,27 @@ using System.Collections;
 public class ButtonPress : MonoBehaviour {
     public bool dropBridge = false;
     public bool entered = false;
+
     private GameObject platform;
+    private AudioSource audio_source;
+    public AudioClip click;
+
     Vector3 rotationEuler;
     Vector3 initialPosition;
     Vector3 downPosition;
+
     private float currentTime = 0;
+
     bool moveDirection = true;
     bool move = false;
 
 	void Start () {
         platform = GameObject.Find("Platform");
+        audio_source = GetComponent<AudioSource>();
+
         initialPosition = transform.position;
         downPosition = transform.position;
-        downPosition.y -= 1;
+        downPosition.y -= 0.05f;
 	}
 
 
@@ -54,17 +62,17 @@ public class ButtonPress : MonoBehaviour {
 
     void OnTriggerEnter2D()
     {
-        //currentTime = 0;
+        audio_source.PlayOneShot(click);
+        transform.position = downPosition;
     }
     void OnTriggerStay2D()
     {
         move = true;
-        transform.position = downPosition;
     }
 
     void OnTriggerExit2D()
     {
         move = false;
-        transform.position = downPosition;
+        transform.position = initialPosition;
     }
 }

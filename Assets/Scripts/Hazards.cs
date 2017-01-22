@@ -4,7 +4,11 @@ using System.Collections;
 public class Hazards : MonoBehaviour
 {
     private WorldState world_state;
+
     public bool hotHazard = false;
+
+    public AudioSource audio_source;
+    public AudioClip click;
 
     private PlayerLives player_lives;
 
