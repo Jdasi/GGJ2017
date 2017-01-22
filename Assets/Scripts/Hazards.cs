@@ -27,6 +27,9 @@ public class Hazards : MonoBehaviour
             {
                 if (hotHazard)
                 {
+                    player_lives.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                    player_lives.gameObject.GetComponent<CircleCollider2D>().enabled = false;
+
                     player_lives.remove_life();
                 }
             }
@@ -34,6 +37,9 @@ public class Hazards : MonoBehaviour
             {
                 if (!hotHazard)
                 {
+                    player_lives.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                    player_lives.gameObject.GetComponent<CircleCollider2D>().enabled = false;
+
                     player_lives.remove_life();
                 }
             }

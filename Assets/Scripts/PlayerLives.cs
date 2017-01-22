@@ -30,6 +30,9 @@ public class PlayerLives : MonoBehaviour
         if (lives >= 0)
         {
             gameObject.transform.position = last_checkpoint;
+
+            GetComponent<BoxCollider2D>().enabled = true;
+            GetComponent<CircleCollider2D>().enabled = true;
         }
         else
         {
