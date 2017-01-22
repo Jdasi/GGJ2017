@@ -13,7 +13,8 @@ GameObject:
   - 50: {fileID: 5077708}
   - 61: {fileID: 6109274}
   - 114: {fileID: 11438738}
-  m_Layer: 0
+  - 114: {fileID: 11446176}
+  m_Layer: 11
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.38, y: 1.22, z: 0}
+  m_LocalPosition: {x: 10.03, y: 1.28, z: -1}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -60,9 +61,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.014513016, y: -0.10643101}
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 1.28}
+  m_Size: {x: 0.47551617, y: 0.8155753}
 --- !u!95 &9520644
 Animator:
   serializedVersion: 3
@@ -95,6 +96,18 @@ MonoBehaviour:
   hot_sprite: {fileID: 0}
   visible_in_cold: 0
   visible_in_hot: 1
+--- !u!114 &11446176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 164520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d65cbec09a5464aae1b6e0cb8c3224, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hotHazard: 1
 --- !u!212 &21246716
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -14,12 +14,11 @@ public class Icicle : MonoBehaviour {
 
     void Start () 
     {
-        InvokeRepeating("checkFallChance", 0.5f, Random.Range(1f, 2.0f));
+        InvokeRepeating("checkFallChance", 0.5f, Random.Range(0.5f, 1.0f));
 
         for (int i = 0; i < icicles.Length; i++)
         {
-           // rigid_body[i] = icicles[i].GetComponent<Rigidbody2D>();
-            //rigid_body[i].gravityScale = 0;
+
         }
     }
 

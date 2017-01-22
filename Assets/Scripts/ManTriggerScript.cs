@@ -19,7 +19,6 @@ public class ManTriggerScript : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Play");
             man.GetComponentInParent<ManScript>().playHelp();
         }
     }
