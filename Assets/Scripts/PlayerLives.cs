@@ -13,7 +13,7 @@ public class PlayerLives : MonoBehaviour
     {
         last_checkpoint = transform.position;
 
-        lives_display = GameObject.Find("lives_display").GetComponent<Text>();
+        lives_display = GameObject.Find("lives_display").GetComponent<Text>(); // wut?
         lives_display.text = lives.ToString();
 	}
 	
