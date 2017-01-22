@@ -12,6 +12,7 @@ public class ManScript : MonoBehaviour
     bool isDead = false;
     private WorldState world_state;
     private AudioSource audio_source;
+    public AudioClip death_sound;
 
     // Use this for initialization
     void Start()
@@ -45,6 +46,9 @@ public class ManScript : MonoBehaviour
         if (timeLeft < 0)
         {
             Destroy(gameObject);
+
+            audio_source.PlayOneShot(death_sound);
+
             world_state.kinda_heatwave_objects.Remove(gameObject);
         }
     }
