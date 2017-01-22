@@ -38,15 +38,11 @@ public class SteamScript : MonoBehaviour {
 
         if (!world_state.is_hot)
         {
-            //cold = true;
-
             steam.GetComponent<ParticleSystem>().enableEmission = false;
         }
 
         else
         {
-            //cold = false;
-
             steam.GetComponent<ParticleSystem>().enableEmission = true;
         }
     }
