@@ -76,7 +76,7 @@ public class ManScript : MonoBehaviour
 
             isDead = true;
 
-            transform.localScale *= 1.2f;
+            transform.localScale *= 1.3f;
         }
     }
 
