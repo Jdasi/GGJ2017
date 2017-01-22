@@ -1525,7 +1525,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 417746, guid: 0c042fab01930334bbc5aba29b16ca5d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 19.13
+      value: 8.8
       objectReference: {fileID: 0}
     - target: {fileID: 417746, guid: 0c042fab01930334bbc5aba29b16ca5d, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2709,6 +2709,23 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 431014, guid: 15aa2143c857c524fb247830df9ccb95, type: 2}
   m_PrefabInternal: {fileID: 1127888043}
+--- !u!1 &1033838794 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 114790, guid: c31cf9ca5be79fb418abb999ebe873ca, type: 2}
+  m_PrefabInternal: {fileID: 1814265313}
+--- !u!114 &1033838795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1033838794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20f0d5da40f3cb14abdf7e222a45e61c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerIsAlive: 1
+  hitBox: {fileID: 0}
 --- !u!4 &1109087473 stripped
 Transform:
   m_PrefabParentObject: {fileID: 431014, guid: 15aa2143c857c524fb247830df9ccb95, type: 2}
@@ -4553,7 +4570,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 420364, guid: abf483401a429d443a7d4fa08c7a4b7d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 11
+      value: 13.987
       objectReference: {fileID: 0}
     - target: {fileID: 420364, guid: abf483401a429d443a7d4fa08c7a4b7d, type: 2}
       propertyPath: m_LocalPosition.y
@@ -4586,6 +4603,10 @@ Prefab:
     - target: {fileID: 174394, guid: abf483401a429d443a7d4fa08c7a4b7d, type: 2}
       propertyPath: m_TagString
       value: Tile
+      objectReference: {fileID: 0}
+    - target: {fileID: 21261662, guid: abf483401a429d443a7d4fa08c7a4b7d, type: 2}
+      propertyPath: m_FlipX
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: abf483401a429d443a7d4fa08c7a4b7d, type: 2}
