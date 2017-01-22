@@ -23,9 +23,13 @@ public class playerCollisions : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.tag == "player")
+        Debug.Log(col);
+        if(col == hitBox)
         {
-            if(col.gameObject.tag == "Enemy" )
+            Debug.Log("Entered");
+            Debug.Log(col.gameObject.tag);
+
+            if (col.tag == "Enemy" )
             {
                 if(world_state.is_hot)
                 {
@@ -34,7 +38,7 @@ public class playerCollisions : MonoBehaviour {
                 }
             
             }
-            if(col.gameObject.tag == "HazardHot")
+            if(col.tag == "HazardHot")
             {
                 if (world_state.is_hot)
                 {

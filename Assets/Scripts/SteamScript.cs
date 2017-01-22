@@ -26,7 +26,7 @@ public class SteamScript : MonoBehaviour {
         {
             if (coll.tag == "Player")
             {
-                coll.GetComponent<Rigidbody2D>().AddForce(transform.up * 20);
+                coll.GetComponent<Rigidbody2D>().AddForce(transform.up * 25);
                 coll.GetComponent<Rigidbody2D>().gravityScale = 0.5f;
             }
         }
