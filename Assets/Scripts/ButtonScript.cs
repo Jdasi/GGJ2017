@@ -17,7 +17,7 @@ public class ButtonScript : MonoBehaviour {
     {
         if (GetComponent<Renderer>().isVisible)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetButtonDown("Interact"));
             {
                 moveDoor = true;
                 //play click sound
