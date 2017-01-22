@@ -22237,7 +22237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropBridge: 0
   entered: 0
-  click: {fileID: 8300000, guid: b574aff952f055d4e88e0983a4e71149, type: 3}
+  click: {fileID: 8300000, guid: 3f3e3b0ffbd710c46ba0038f45dcfecc, type: 3}
 --- !u!82 &1240181261
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22247,8 +22247,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 3f3e3b0ffbd710c46ba0038f45dcfecc, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

@@ -4,13 +4,14 @@ using System.Collections;
 public class Checkpoint : MonoBehaviour
 {
     private bool can_activate = true;
-
-	void Start()
+    private AudioSource audio_source;
+    public AudioClip checkpoint;
+    void Start()
     {
-    
-	}
-	
-	void Update()
+        audio_source = GetComponent<AudioSource>();
+    }
+
+    void Update()
     {
 
 	}
@@ -22,6 +23,7 @@ public class Checkpoint : MonoBehaviour
 
         if (collider.gameObject.tag == "Player")
         {
+            audio_source.PlayOneShot(checkpoint);
             can_activate = false;
 
             collider.GetComponent<PlayerLives>().last_checkpoint = transform.position;
