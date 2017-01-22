@@ -53,11 +53,15 @@ public class MainMenu : MonoBehaviour {
         {
             animation.SetTrigger("Off");
         }
-
-
-       
     }
 
+
+    public void MainMenuButton()
+    {
+        audio_source.PlayOneShot(click);
+
+        Application.LoadLevel("Main Menu");
+    }
 
 
 
