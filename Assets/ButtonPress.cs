@@ -3,11 +3,10 @@ using System.Collections;
 
 public class ButtonPress : MonoBehaviour {
     public bool dropBridge = false;
-    public bool stopRotation = true;
-    private float timeLeft = 3;
+    public bool entered = false;
     private GameObject bridge;
     Vector3 rotationEuler;
-
+    private float currentTime = 0;
 
 	void Start () {
         bridge = GameObject.Find("Drawbridge");
@@ -16,36 +15,44 @@ public class ButtonPress : MonoBehaviour {
 
     void Update () {
         //if player on trigger and not fully dropped
-
-        print(transform.rotation.eulerAngles);
-	    if (dropBridge)
+        //print(transform.rotation.eulerAngles);
+        if (dropBridge)
         {
-            if(bridge.transform.rotation.z < -0.75)
+            if (currentTime <= 3)
             {
-                Debug.Log(bridge.transform.rotation.z);
+                currentTime += Time.deltaTime;
+
                 rotationEuler -= Vector3.forward * 30 * Time.deltaTime; //increment 30 degrees every second
                 bridge.transform.rotation = Quaternion.Euler(rotationEuler);
-            }            
+                Debug.Log(currentTime);
+            }
         }
-        else if(!dropBridge)
+        else if (!dropBridge && entered)
         {
-            if (bridge.transform.rotation.z > -0.75)
+            if (currentTime <= 3)
             {
-                rotationEuler += Vector3.forward * 30 * Time.deltaTime; //increment 30 degrees every second
+                Debug.Log(currentTime);
+                currentTime += Time.deltaTime;
+                rotationEuler += Vector3.forward * 31 * Time.deltaTime; //increment 30 degrees every second
                 bridge.transform.rotation = Quaternion.Euler(rotationEuler);
             }
         }
 
     }
 
-
+    void OnTriggerEnter2D()
+    {
+        currentTime = 0;
+    }
     void OnTriggerStay2D()
     {
+        entered = true;
         dropBridge = true;
     }
 
     void OnTriggerExit2D()
     {
+        currentTime = 0;
         dropBridge = false;
     }
 }
