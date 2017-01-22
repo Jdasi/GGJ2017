@@ -3,12 +3,17 @@ using System.Collections;
 
 public class SlipperyFloor : MonoBehaviour {
 
-
+    private WorldState world_state;
     private PlayerMovement player;
+    bool slippy = true;
 
 	// Use this for initialization
 	void Start () {
         player = GameObject.Find("Player").GetComponent<PlayerMovement>();
+
+        world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
+
+        world_state.kinda_heatwave_objects.Add(gameObject);
     }
 	
 	// Update is called once per frame
@@ -16,21 +21,53 @@ public class SlipperyFloor : MonoBehaviour {
 	
 	}
 
-
-    void OnTriggerStay2D(Collider2D coll)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if(coll.tag == "Player")
+        if (other.gameObject.tag == "HeatWaveSource")
         {
-            player.on_ice = true;
+            checkTemp();
         }
     }
 
+    void OnTriggerStay2D(Collider2D coll)
+    {
+        if (slippy)
+        {
+            if (coll.tag == "Player")
+            {
+                player.on_ice = true;
+            }
+        }
+
+        else
+        {
+            player.on_ice = false;
+        }
+    }
 
     void OnTriggerExit2D(Collider2D coll)
     {
         if (coll.tag == "Player")
         {
             player.on_ice = false;
+        }
+    }
+
+    public void react()
+    {
+        checkTemp();
+    }
+
+    void checkTemp()
+    {
+        if (world_state.is_hot)
+        {
+            slippy = false;
+        }
+
+        else
+        {
+            slippy = true;
         }
     }
 }
