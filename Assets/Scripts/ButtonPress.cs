@@ -6,12 +6,17 @@ public class ButtonPress : MonoBehaviour {
     public bool entered = false;
     private GameObject platform;
     Vector3 rotationEuler;
+    Vector3 initialPosition;
+    Vector3 downPosition;
     private float currentTime = 0;
     bool moveDirection = true;
     bool move = false;
 
 	void Start () {
         platform = GameObject.Find("Platform");
+        initialPosition = transform.position;
+        downPosition = transform.position;
+        downPosition.y -= 1;
 	}
 
 
@@ -54,14 +59,12 @@ public class ButtonPress : MonoBehaviour {
     void OnTriggerStay2D()
     {
         move = true;
-        //entered = true;
-        //dropBridge = true;
+        transform.position = downPosition;
     }
 
     void OnTriggerExit2D()
     {
         move = false;
-        //currentTime = 0;
-        //dropBridge = false;
+        transform.position = downPosition;
     }
 }
