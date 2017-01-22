@@ -6,9 +6,11 @@ public class SlipperyFloor : MonoBehaviour {
     private WorldState world_state;
     private PlayerMovement player;
     bool slippy = true;
+    public Sprite cold;
+    public Sprite hot;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         player = GameObject.Find("Player").GetComponent<PlayerMovement>();
 
         world_state = GameObject.Find("WorldStateManager").GetComponent<WorldState>();
@@ -63,11 +65,13 @@ public class SlipperyFloor : MonoBehaviour {
         if (world_state.is_hot)
         {
             slippy = false;
+            GetComponent<SpriteRenderer>().sprite = hot;
         }
 
         else
         {
             slippy = true;
+            GetComponent<SpriteRenderer>().sprite = cold;
         }
     }
 }
