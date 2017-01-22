@@ -305,11 +305,32 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 465574, guid: c31cf9ca5be79fb418abb999ebe873ca, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c31cf9ca5be79fb418abb999ebe873ca, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &642460120 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 167816, guid: a094db32ff1e7ff46a9c4d70db479dd0, type: 2}
+  m_PrefabInternal: {fileID: 865111223}
+--- !u!50 &642460124
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 642460120}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &691224821
 Prefab:
   m_ObjectHideFlags: 0
@@ -347,7 +368,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 484814, guid: 9c606eee92e95ba4dbcc47d51cef9f4e, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2360314, guid: 9c606eee92e95ba4dbcc47d51cef9f4e, type: 2}
       propertyPath: m_Materials.Array.data[0]
@@ -409,7 +430,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 410530, guid: a094db32ff1e7ff46a9c4d70db479dd0, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 148824, guid: a094db32ff1e7ff46a9c4d70db479dd0, type: 2}
       propertyPath: m_Name
@@ -778,7 +799,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 432570, guid: a534d8d254637f847b85e3be667051f2, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11483016, guid: a534d8d254637f847b85e3be667051f2, type: 2}
       propertyPath: deathHeight
@@ -834,7 +855,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 458140, guid: 943160b83b69327409d1b0d43ebee15f, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 158630, guid: 943160b83b69327409d1b0d43ebee15f, type: 2}
       propertyPath: m_Name
@@ -880,7 +901,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 494646, guid: 3875f5884cfd03f4a923a2cb3e58d5ad, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3875f5884cfd03f4a923a2cb3e58d5ad, type: 2}
@@ -922,7 +943,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 420364, guid: abf483401a429d443a7d4fa08c7a4b7d, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: abf483401a429d443a7d4fa08c7a4b7d, type: 2}
